@@ -29,4 +29,9 @@ public class PlayerMove : MonoBehaviour
 
         transform.Translate(move * speed * Time.deltaTime);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Hit");
+    }
 }
