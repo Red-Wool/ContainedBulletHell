@@ -2,19 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletScript : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
     public float speed;
     public float lifetime;
 
     private float lifeTimer;
-    private PlayerWeapon type;
-    private StoredValue intel;
+    private int bulletID;
+    private bool weakened;
 
     // Start is called before the first frame update
     void Start()
     {
+        
+    }
+
+    public void SetUp(int id, float setSpeed)
+    {
         lifeTimer = 0f;
+        weakened = false;
+
+        speed = setSpeed;
+        bulletID = id;
     }
 
     // Update is called once per frame
@@ -30,28 +39,17 @@ public class BulletScript : MonoBehaviour
         transform.Translate(Vector3.right * speed * Time.deltaTime);
     }
 
-    public void SetUp(StoredValue val, PlayerWeapon bullet)
+    public void Weaken()
     {
-        intel = val;
-        lifeTimer = 0f;
-        type = bullet;
+        weakened = BulletInfiltrate.instance.CheckBullet(transform, bulletID);
+        speed *= 0.3f;
     }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            switch (type)
-            {
-                case PlayerWeapon.Intel:
-                    intel.value += 5f;
-                    break;
-                case PlayerWeapon.Weaken:
 
-                    break;
-            }
-            
             gameObject.SetActive(false);
         }
         else if (collision.gameObject.CompareTag("Border"))

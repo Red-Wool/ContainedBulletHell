@@ -5,9 +5,16 @@ using UnityEngine;
 [System.Serializable]
 public class ObjectPool
 {
-    [SerializeField] private GameObject poolObject;
+    [SerializeField] private GameObject poolObject; public GameObject PoolObject { get { return poolObject; } }
     [SerializeField] private int initAmount;
     private List<GameObject> pool; public List<GameObject> Pool { get { return pool; } }
+
+    public ObjectPool(GameObject obj, int init)
+    {
+        poolObject = obj;
+        initAmount = init;
+        AddObjects();
+    }
 
     public GameObject GetObject()
     {

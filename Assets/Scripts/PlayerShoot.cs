@@ -55,8 +55,21 @@ public class PlayerShoot : MonoBehaviour
         obj.transform.position = transform.position;
         obj.transform.rotation = Quaternion.Euler(Vector3.forward * angle);
 
-        obj.GetComponent<BulletScript>().SetUp(intel, type);
+        obj.GetComponent<PlayerBullet>().SetUp(intel, type);
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("EnemyBullet"))
+        {
+            Debug.Log("Gaming!");
+            intel.value += 1;
+        }
+        else if (collision.gameObject.CompareTag("Portal"))
+        {
+            BulletInfiltrate.instance.EnterBullet(collision.gameObject.GetComponent<InfiltratePortal>().scene);
+        }
     }
 }
 

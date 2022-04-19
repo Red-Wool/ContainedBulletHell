@@ -27,7 +27,12 @@ public class PlayerMove : MonoBehaviour
             move *= 0.5f;
         }
 
-        transform.Translate(move * speed * Time.deltaTime);
+        rb.velocity = (move * speed);
+    }
+
+    public void Damage()
+    {
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
