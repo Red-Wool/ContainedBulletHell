@@ -8,9 +8,15 @@ public class BulletInfiltrate : MonoBehaviour
 {
     public static BulletInfiltrate instance { get; private set; }
 
+    public PlayerMove player;
     public GameObject portal;
+    public GameObject container;
 
     private BulletWeaken[] weakBullets;
+    private string bulletSceneName;
+    private Vector3 lastPos;
+
+    [HideInInspector] public InfiltrateStart scaler;
 
     private void Awake()
     {
@@ -67,6 +73,7 @@ public class BulletInfiltrate : MonoBehaviour
             portal.GetComponent<BoxCollider2D>().enabled = false;
             portal.transform.parent = null;
             portal.transform.DOScale(Vector3.zero, 1f);
+            lastPos = parent.transform.position;
 
             parent.gameObject.SetActive(false);
         }
@@ -75,6 +82,40 @@ public class BulletInfiltrate : MonoBehaviour
     public void EnterBullet(string sceneName)
     {
         SpawnPortal(transform, false);
+        ScenePause.instance.activeScene = 1;
         SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+
+        StartCoroutine(MoveAway());
+
+        bulletSceneName = sceneName;
     }
+
+    public IEnumerator MoveAway()
+    {
+        container.transform.DOScale(Vector3.one * 10f, 5f);
+        //container.transform.DOMove(Vector3.down * 100, 5f).SetEase(Ease.OutExpo);
+        yield return new WaitForSeconds(5f);
+        player.InfiltrateTransition(Vector3.zero, false);
+        //container.transform.position = Vector3.down * 100000;
+    }
+
+    public IEnumerator MoveIn()
+    {
+        //container.transform.position = Vector3.down * 100;
+        //container.transform.DOMove(Vector3.zero, 5f).SetEase(Ease.InOutSine);
+        container.transform.DOScale(Vector3.one, 2f);
+        yield return new WaitForSeconds(2f);
+        player.InfiltrateTransition(lastPos, false);
+        yield return new WaitForSeconds(3f);
+        ScenePause.instance.activeScene = 0;
+        //SceneManager.UnloadSceneAsync(bulletSceneName);
+
+    }
+
+    public void ExitBullet()
+    {
+        scaler.Scale(false);
+        StartCoroutine(MoveIn());
+    }
+
 }

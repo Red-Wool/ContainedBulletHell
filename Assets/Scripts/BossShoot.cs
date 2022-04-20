@@ -12,6 +12,9 @@ public class BossShoot : MonoBehaviour
 
     [SerializeField] private List<ObjectPool> bulletPools;
     [SerializeField] private BulletWeaken[] weakBullets;
+    [SerializeField] private GameObject container;
+
+    [SerializeField] private int activeScene;
 
     public GameObject player;
 
@@ -22,39 +25,41 @@ public class BossShoot : MonoBehaviour
         sessionPointer = Random.Range(0, bulletData.Session.Length - 1);
         sequencePointer = 0;
 
-        Debug.Log(weakBullets[0].sceneName);
+        //Debug.Log(weakBullets[0].sceneName);
         BulletInfiltrate.instance.AddWeakenBullet(weakBullets);
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-        
-        EnemyBulletSession curSession = bulletData.Session[sessionPointer];
-
-        if (sequencePointer == curSession.sequence.Length)
+        if (ScenePause.instance.activeScene == activeScene)
         {
-            if (CheckTimer(curSession.coolDown))
-            {
-                int[] next = curSession.nextSessions;
+            timer += Time.deltaTime;
 
-                sessionPointer = next[Random.Range(0, next.Length)];
-                sequencePointer = 0;
+            EnemyBulletSession curSession = bulletData.Session[sessionPointer];
+
+            if (sequencePointer == curSession.sequence.Length)
+            {
+                if (CheckTimer(curSession.coolDown))
+                {
+                    int[] next = curSession.nextSessions;
+
+                    sessionPointer = next[Random.Range(0, next.Length)];
+                    sequencePointer = 0;
+                }
+            }
+            else
+            {
+                EnemyBulletSequence curSequence = curSession.sequence[sequencePointer];
+
+                if (CheckTimer(curSequence.wait))
+                {
+                    int val = Random.Range(0, curSession.spawnPos.Length);
+                    StartCoroutine(EvaluteBulletSequence(curSequence, curSession.spawnPos[val]));
+                    sequencePointer++;
+                }
             }
         }
-        else
-        {
-            EnemyBulletSequence curSequence = curSession.sequence[sequencePointer];
-
-            if (CheckTimer(curSequence.wait))
-            {
-                int val = Random.Range(0, curSession.spawnPos.Length);
-                StartCoroutine(EvaluteBulletSequence(curSequence, curSession.spawnPos[val]));
-                sequencePointer++;
-            }
-        }
-
     }
 
     public void CheckBulletPool()
@@ -81,12 +86,13 @@ public class BossShoot : MonoBehaviour
         for (int i = 0; i < pattern.bulletAngles.Length; i++)
         {
             GameObject obj = bulletPools[key].GetObject();
+            obj.transform.parent = container.transform;
 
             obj.transform.position = transform.position + new Vector3(pos.x, pos.y, 0f);
             obj.transform.rotation = Quaternion.Euler(Vector3.forward * (angle + pattern.bulletAngles[i]));
             EnemyBullet bullet = obj.GetComponent<EnemyBullet>();
 
-            bullet.SetUp(key, pattern.speed + extraSpeed);
+            bullet.SetUp(key, pattern.speed + extraSpeed, activeScene);
         }
     }
 
@@ -98,7 +104,7 @@ public class BossShoot : MonoBehaviour
 
     public IEnumerator EvaluteBulletSequence(EnemyBulletSequence sequence, Vector2 pos)
     {
-        float angle = 0, anglePlus = 0, speedPlus = 0;
+        float angle, anglePlus = 0, speedPlus = 0;
 
         for (int i = 0; i < sequence.loops; i++)
         {

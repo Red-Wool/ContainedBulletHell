@@ -34,11 +34,12 @@ MonoBehaviour:
     - {x: 0, y: 0}
     - {x: 0, y: 3}
     - {x: 0, y: -3}
+    - {x: -40, y: 0}
   - sequence:
     - pattern:
         bulletAngles:
         - 0
-        speed: 20
+        speed: 30
         key: 1
       loops: 5
       rate: 0.1
@@ -46,7 +47,7 @@ MonoBehaviour:
       aimAtPlayer: 1
       angleOffset: 0
       loopAngle: 0
-      loopSpeed: 3
+      loopSpeed: -3
     nextSessions: 0000000001000000
     coolDown: 0.7
     spawnPos:

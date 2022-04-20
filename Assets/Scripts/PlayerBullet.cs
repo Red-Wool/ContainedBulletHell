@@ -10,6 +10,7 @@ public class PlayerBullet : MonoBehaviour
     private float lifeTimer;
     private PlayerWeapon type;
     private StoredValue intel;
+    private int activeScene;
 
     // Start is called before the first frame update
     void Start()
@@ -20,21 +21,26 @@ public class PlayerBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lifeTimer += Time.deltaTime;
-        if (lifeTimer > lifetime)
+        if (ScenePause.instance.activeScene == activeScene)
         {
-            gameObject.SetActive(false);
-        }
+            lifeTimer += Time.deltaTime;
+            if (lifeTimer > lifetime)
+            {
+                gameObject.SetActive(false);
+            }
 
-        //Debug.Log(transform.right + " " + transform.right * speed);
-        transform.Translate(Vector3.right * speed * Time.deltaTime);
+            //Debug.Log(transform.right + " " + transform.right * speed);
+            transform.Translate(Vector3.right * speed * Time.deltaTime);
+        }
+        
     }
 
-    public void SetUp(StoredValue val, PlayerWeapon bullet)
+    public void SetUp(StoredValue val, PlayerWeapon bullet, int scene)
     {
         intel = val;
         lifeTimer = 0f;
         type = bullet;
+        activeScene = scene;
     }
 
 
@@ -46,7 +52,7 @@ public class PlayerBullet : MonoBehaviour
             {
                 case PlayerWeapon.Intel:
                     if (intel)
-                        intel.value += 5f;
+                        intel.value += 2f;
                     break;
                 case PlayerWeapon.Weaken:
 

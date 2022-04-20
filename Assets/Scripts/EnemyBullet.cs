@@ -10,33 +10,33 @@ public class EnemyBullet : MonoBehaviour
     private float lifeTimer;
     private int bulletID;
     private bool weakened;
+    private int activeScene;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    public void SetUp(int id, float setSpeed)
+    public void SetUp(int id, float setSpeed, int scene)
     {
         lifeTimer = 0f;
         weakened = false;
 
         speed = setSpeed;
         bulletID = id;
+        activeScene = scene;
     }
 
     // Update is called once per frame
     void Update()
     {
-        lifeTimer += Time.deltaTime;
-        if (lifeTimer > lifetime)
+        if (ScenePause.instance.activeScene == activeScene)
         {
-            gameObject.SetActive(false);
-        }
+            lifeTimer += Time.deltaTime;
+            if (lifeTimer > lifetime)
+            {
+                gameObject.SetActive(false);
+            }
 
-        //Debug.Log(transform.right + " " + transform.right * speed);
-        transform.Translate(Vector3.right * speed * Time.deltaTime);
+            //Debug.Log(transform.right + " " + transform.right * speed);
+            transform.Translate(Vector3.right * speed * Time.deltaTime);
+        }
+        
     }
 
     public void Weaken()
@@ -49,7 +49,7 @@ public class EnemyBullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-
+            collision.GetComponent<PlayerMove>().Damage(1);
             gameObject.SetActive(false);
         }
         else if (collision.gameObject.CompareTag("Border"))
