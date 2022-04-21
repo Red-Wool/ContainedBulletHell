@@ -31,10 +31,9 @@ MonoBehaviour:
     nextSessions: 0000000001000000
     coolDown: 1
     spawnPos:
-    - {x: 0, y: 0}
-    - {x: 0, y: 3}
-    - {x: 0, y: -3}
-    - {x: -40, y: 0}
+    - {x: 4, y: 3}
+    - {x: 0, y: 2}
+    - {x: -3, y: 3}
   - sequence:
     - pattern:
         bulletAngles:
@@ -51,6 +50,6 @@ MonoBehaviour:
     nextSessions: 0000000001000000
     coolDown: 0.7
     spawnPos:
-    - {x: 0, y: 3}
-    - {x: 0, y: 0}
-    - {x: 0, y: -3}
+    - {x: 4, y: 3}
+    - {x: 0, y: 2}
+    - {x: -3, y: 3}

@@ -8,7 +8,7 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private ObjectPool normalShoot;
     [SerializeField] private ObjectPool weakLaser;
 
-    [SerializeField] private ObjectPool upgradeShot;
+    [SerializeField] private ObjectPool[] upgradeShot;
 
     [SerializeField] private float normalShootRate;
     [SerializeField] private float upgradeShootRate;
@@ -33,7 +33,10 @@ public class PlayerShoot : MonoBehaviour
         canControl = true;
         normalShoot.AddObjects();
         weakLaser.AddObjects();
-        upgradeShot.AddObjects();
+        for (int i = 0; i < upgradeShot.Length; i++)
+        {
+            upgradeShot[i].AddObjects();
+        };
 
         shootRate = normalShootRate;
 
@@ -59,7 +62,10 @@ public class PlayerShoot : MonoBehaviour
             {
                 if (second)
                 {
-                    Shoot(upgradeShot.GetObject(), angle, PlayerWeapon.Damage);
+                    for (int i = 0; i < upgradeShot.Length; i++)
+                    {
+                        Shoot(upgradeShot[i].GetObject(), angle, PlayerWeapon.Damage);
+                    }
                 }
                 else
                 { 

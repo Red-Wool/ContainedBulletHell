@@ -239,7 +239,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b8d14c9c054593348818920082347228, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2751,7 +2751,12 @@ PrefabInstance:
     - target: {fileID: 3529557426781757067, guid: a3d10cf51c02b274b82713aa335cc71f,
         type: 3}
       propertyPath: upgradeShootRate
-      value: 0.05
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529557426781757067, guid: a3d10cf51c02b274b82713aa335cc71f,
+        type: 3}
+      propertyPath: upgradeShot.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3529557426781757067, guid: a3d10cf51c02b274b82713aa335cc71f,
         type: 3}
@@ -2761,6 +2766,28 @@ PrefabInstance:
     - target: {fileID: 3529557426781757067, guid: a3d10cf51c02b274b82713aa335cc71f,
         type: 3}
       propertyPath: upgradeShot.poolObject
+      value: 
+      objectReference: {fileID: 1735257466269410355, guid: df3cf51d7b38c8448a9513fb34735be2,
+        type: 3}
+    - target: {fileID: 3529557426781757067, guid: a3d10cf51c02b274b82713aa335cc71f,
+        type: 3}
+      propertyPath: upgradeShot.Array.data[0].initAmount
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529557426781757067, guid: a3d10cf51c02b274b82713aa335cc71f,
+        type: 3}
+      propertyPath: upgradeShot.Array.data[0].poolObject
+      value: 
+      objectReference: {fileID: 7757734756868013373, guid: 79c1a92b23e2a964c9b232fc18aa97f3,
+        type: 3}
+    - target: {fileID: 3529557426781757067, guid: a3d10cf51c02b274b82713aa335cc71f,
+        type: 3}
+      propertyPath: upgradeShot.Array.data[1].initAmount
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529557426781757067, guid: a3d10cf51c02b274b82713aa335cc71f,
+        type: 3}
+      propertyPath: upgradeShot.Array.data[1].poolObject
       value: 
       objectReference: {fileID: 1735257466269410355, guid: df3cf51d7b38c8448a9513fb34735be2,
         type: 3}
