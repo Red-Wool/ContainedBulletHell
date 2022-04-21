@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerBullet : MonoBehaviour
 {
@@ -37,6 +38,9 @@ public class PlayerBullet : MonoBehaviour
 
     public void SetUp(StoredValue val, PlayerWeapon bullet, int scene)
     {
+        transform.localScale = Vector3.zero;
+        transform.DOScale(Vector3.one, 0.1f);
+
         intel = val;
         lifeTimer = 0f;
         type = bullet;
@@ -54,8 +58,8 @@ public class PlayerBullet : MonoBehaviour
                     if (intel)
                         intel.value += 2f;
                     break;
-                case PlayerWeapon.Weaken:
-
+                case PlayerWeapon.Damage:
+                    collision.gameObject.GetComponent<BossShoot>().Damage(5);
                     break;
             }
             

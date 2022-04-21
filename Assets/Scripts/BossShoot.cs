@@ -5,8 +5,14 @@ using UnityEngine;
 public class BossShoot : MonoBehaviour
 {
     [SerializeField] private BossBulletData bulletData;
+    [SerializeField] private BossBulletData secondData;
+
+    [SerializeField] private StoredValue bossHP;
+    [SerializeField] private float maxHP; public float MaxHP { get { return maxHP; } }
+
     private int sessionPointer;
     private int sequencePointer;
+    private bool second;
 
     private float timer;
 
@@ -22,6 +28,7 @@ public class BossShoot : MonoBehaviour
     void Start()
     {
         CheckBulletPool();
+        bossHP.value = maxHP;
         sessionPointer = Random.Range(0, bulletData.Session.Length - 1);
         sequencePointer = 0;
 
@@ -36,7 +43,7 @@ public class BossShoot : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            EnemyBulletSession curSession = bulletData.Session[sessionPointer];
+            EnemyBulletSession curSession = second ? secondData.Session[sessionPointer] : bulletData.Session[sessionPointer];
 
             if (sequencePointer == curSession.sequence.Length)
             {
@@ -60,6 +67,18 @@ public class BossShoot : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void Damage(float damage)
+    {
+        bossHP.value -= damage;
+    }
+
+    public void Second()
+    {
+        second = true;
+        sessionPointer = Random.Range(0, secondData.Session.Length - 1);
+        sequencePointer = 0;
     }
 
     public void CheckBulletPool()

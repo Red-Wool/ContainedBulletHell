@@ -8,7 +8,11 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private ObjectPool normalShoot;
     [SerializeField] private ObjectPool weakLaser;
 
-    [SerializeField] private float shootRate;
+    [SerializeField] private ObjectPool upgradeShot;
+
+    [SerializeField] private float normalShootRate;
+    [SerializeField] private float upgradeShootRate;
+    private float shootRate;
     private float rateTimer;
     public bool canControl { get; set; }
 
@@ -16,6 +20,7 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private StoredValue intel;
     [SerializeField] private GameObject graze;
     private Camera cam;
+    private bool second;
 
     [SerializeField] private PlayerMove move;
 
@@ -24,9 +29,13 @@ public class PlayerShoot : MonoBehaviour
     {
         cam = Camera.main;
 
+        second = false;
         canControl = true;
         normalShoot.AddObjects();
         weakLaser.AddObjects();
+        upgradeShot.AddObjects();
+
+        shootRate = normalShootRate;
 
         intel.value = 0f;
     }
@@ -48,15 +57,31 @@ public class PlayerShoot : MonoBehaviour
 
             if (Input.GetMouseButton(0) && rateTimer > shootRate)
             {
-                Shoot(normalShoot.GetObject(), angle, PlayerWeapon.Intel);
+                if (second)
+                {
+                    Shoot(upgradeShot.GetObject(), angle, PlayerWeapon.Damage);
+                }
+                else
+                { 
+                    Shoot(normalShoot.GetObject(), angle, PlayerWeapon.Intel);
+                }
+                
+                SoundManager.instance.shoot.Play();
             }
             else if (Input.GetMouseButtonDown(1) && laserCost <= intel.value)
             {
-                intel.value -= laserCost;
+                intel.value = 0f;
                 Shoot(weakLaser.GetObject(), angle, PlayerWeapon.Weaken);
+                SoundManager.instance.laser.Play();
             }
         }
         
+    }
+
+    public void Second()
+    {
+        second = true;
+        shootRate = upgradeShootRate;
     }
 
     public void Shoot(GameObject obj, float angle, PlayerWeapon type)
@@ -76,6 +101,7 @@ public class PlayerShoot : MonoBehaviour
         {
             Debug.Log("Gaming!");
             intel.value += 6;
+            SoundManager.instance.graze.Play();
 
             UtilFunctions.PulseObject(graze, 0.2f, 0.5f, 0f, 1);
 
@@ -83,14 +109,15 @@ public class PlayerShoot : MonoBehaviour
         else if (collision.gameObject.CompareTag("Portal"))
         {
             BulletInfiltrate.instance.EnterBullet(collision.gameObject.GetComponent<InfiltratePortal>().scene);
-
+            SoundManager.instance.infiltrateIn.Play();
             move.InfiltrateTransition(collision.gameObject.transform.position, true);
         }
         else if (collision.gameObject.CompareTag("Exit"))
         {
             collision.gameObject.SetActive(false);
             BulletInfiltrate.instance.ExitBullet();
-
+            BulletInfiltrate.instance.Victory();
+            SoundManager.instance.infiltrateIn.Play();
             move.InfiltrateTransition(collision.gameObject.transform.position, true);
         }
     }

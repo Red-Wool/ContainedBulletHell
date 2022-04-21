@@ -45,8 +45,18 @@ public class PlayerMove : MonoBehaviour
         if (shoot.canControl)
         {
             hp.value -= damage;
-            UtilFunctions.PulseObject(shoot.gameObject, 0.3f, 0.1f, 1f, 5);
+            SoundManager.instance.hurt.Play();
+            StartCoroutine(Invincible(3f));
         }
+    }
+
+    public IEnumerator Invincible(float time)
+    {
+        UtilFunctions.PulseObject(shoot.gameObject, 0.6f, 0.1f, 1f, (int)(time / 0.3f));
+        GetComponent<BoxCollider2D>().enabled = false;
+        yield return new WaitForSeconds(time);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -36, 36), Mathf.Clamp(transform.position.y, -20.5f, 20.5f));
+        GetComponent<BoxCollider2D>().enabled = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -60,7 +70,7 @@ public class PlayerMove : MonoBehaviour
         {
             shoot.canControl = false;
             transform.DOScale(Vector3.zero, 2f).SetEase(Ease.OutCubic);
-            transform.DOMove(pos, 3f).SetEase(Ease.OutElastic).OnComplete(() => transform.DOMove(Vector3.zero, 10f));
+            transform.DOMove(pos, 3f).SetEase(Ease.OutElastic).OnComplete(() => transform.DOMove(Vector3.zero, 8f));
         }
         else
         {
@@ -76,7 +86,12 @@ public class PlayerMove : MonoBehaviour
         transform.DOScale(Vector3.one, 2f).SetEase(Ease.OutCubic);
         transform.DOMove(pos, 3f).SetEase(Ease.OutElastic);
         yield return new WaitForSeconds(3f);
-        //transform.localPosition = Vector3.zero;
+        if (BulletInfiltrate.instance.CheckGetAll())
+        {
+            shoot.Second();
+        }
         shoot.canControl = true;
+        shoot.transform.localPosition = Vector3.zero;
+        StartCoroutine(Invincible(1.5f));
     }
 }

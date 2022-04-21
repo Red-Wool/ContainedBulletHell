@@ -9,10 +9,11 @@ public class BulletInfiltrate : MonoBehaviour
     public static BulletInfiltrate instance { get; private set; }
 
     public PlayerMove player;
+    public BossShoot boss;
     public GameObject portal;
     public GameObject container;
 
-    private BulletWeaken[] weakBullets;
+    private List<BulletWeaken> weakBullets;
     private string bulletSceneName;
     private Vector3 lastPos;
 
@@ -33,12 +34,37 @@ public class BulletInfiltrate : MonoBehaviour
 
     public void AddWeakenBullet(BulletWeaken[] weak)
     {
-        weakBullets = weak;
+        weakBullets = new List<BulletWeaken>();
+        foreach(BulletWeaken i in weak)
+        {
+            weakBullets.Add(i);
+        }
+    }
+
+    public bool CheckGetAll()
+    {
+        if (weakBullets.Count == 0)
+        {
+            boss.Second();
+            return true;
+        }
+        return false;
+    }
+
+    public void Victory()
+    {
+        for (int i = 0; i < weakBullets.Count; i++)
+        {
+            if (weakBullets[i].sceneName == bulletSceneName)
+            {
+                weakBullets.Remove(weakBullets[i]);
+            }
+        }
     }
 
     public bool CheckBullet(Transform obj, int id)
     {
-        for (int i = 0; i < weakBullets.Length; i++)
+        for (int i = 0; i < weakBullets.Count; i++)
         {
             if (id == weakBullets[i].weakID)
             {
@@ -96,15 +122,17 @@ public class BulletInfiltrate : MonoBehaviour
         //container.transform.DOMove(Vector3.down * 100, 5f).SetEase(Ease.OutExpo);
         yield return new WaitForSeconds(5f);
         player.InfiltrateTransition(Vector3.zero, false);
-        //container.transform.position = Vector3.down * 100000;
+        SoundManager.instance.infiltrateOut.Play();
+        container.transform.position = Vector3.down * 100000;
     }
 
     public IEnumerator MoveIn()
     {
         //container.transform.position = Vector3.down * 100;
-        //container.transform.DOMove(Vector3.zero, 5f).SetEase(Ease.InOutSine);
+        container.transform.position = Vector3.zero;
         container.transform.DOScale(Vector3.one, 2f);
         yield return new WaitForSeconds(2f);
+        SoundManager.instance.infiltrateOut.Play();
         player.InfiltrateTransition(lastPos, false);
         yield return new WaitForSeconds(3f);
         ScenePause.instance.activeScene = 0;

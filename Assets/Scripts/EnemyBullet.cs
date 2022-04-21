@@ -12,6 +12,8 @@ public class EnemyBullet : MonoBehaviour
     private bool weakened;
     private int activeScene;
 
+    private BoxCollider2D hitbox;
+
     public void SetUp(int id, float setSpeed, int scene)
     {
         lifeTimer = 0f;
@@ -20,6 +22,8 @@ public class EnemyBullet : MonoBehaviour
         speed = setSpeed;
         bulletID = id;
         activeScene = scene;
+        transform.localScale = Vector3.one;
+        hitbox = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -36,7 +40,9 @@ public class EnemyBullet : MonoBehaviour
             //Debug.Log(transform.right + " " + transform.right * speed);
             transform.Translate(Vector3.right * speed * Time.deltaTime);
         }
-        
+        hitbox.enabled = ScenePause.instance.activeScene == activeScene;
+
+
     }
 
     public void Weaken()
