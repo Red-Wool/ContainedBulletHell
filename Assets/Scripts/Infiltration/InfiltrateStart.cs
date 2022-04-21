@@ -11,6 +11,7 @@ public class InfiltrateStart : MonoBehaviour
     void Start()
     {
         transform.localScale = Vector3.zero;
+        transform.position = BulletInfiltrate.instance.lastPos;
         BulletInfiltrate.instance.scaler = this;
         Scale(true);
     }

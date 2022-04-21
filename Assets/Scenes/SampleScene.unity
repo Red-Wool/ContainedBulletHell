@@ -239,7 +239,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b8d14c9c054593348818920082347228, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1249,6 +1249,9 @@ MonoBehaviour:
   - poolObject: {fileID: 8479034719125107786, guid: 240c9413f373ec349a8a2390b91cf126,
       type: 3}
     initAmount: 10
+  - poolObject: {fileID: 2329800764151014575, guid: e84f0c18fe0282e4dacbae5a30764292,
+      type: 3}
+    initAmount: 30
   weakBullets:
   - weakID: 0
     sceneName: BlueSky
@@ -1295,6 +1298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee7c637231e52c942b5d485de684f66f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveData: {fileID: 0}
+  activeScene: 0
 --- !u!1 &1147361485
 GameObject:
   m_ObjectHideFlags: 0
@@ -2082,7 +2087,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ce25f699fa52f024a8b425d2c6004417, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 2
   Loop: 0
   Mute: 0
@@ -2287,6 +2292,7 @@ GameObject:
   - component: {fileID: 2069494433}
   - component: {fileID: 2069494434}
   - component: {fileID: 2069494435}
+  - component: {fileID: 2069494436}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2381,6 +2387,19 @@ MonoBehaviour:
   hurt: {fileID: 1059064875}
   infiltrateIn: {fileID: 1162573774}
   infiltrateOut: {fileID: 1147361487}
+--- !u!114 &2069494436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069494430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27362bc1c196b07469188d11baa5e155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boss: {fileID: 1118829555}
 --- !u!1 &2107317651
 GameObject:
   m_ObjectHideFlags: 0

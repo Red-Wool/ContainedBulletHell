@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class EnemyBullet : MonoBehaviour
 {
@@ -12,12 +13,22 @@ public class EnemyBullet : MonoBehaviour
     private bool weakened;
     private int activeScene;
 
+    [SerializeField] private BulletModify mod;
+
     private BoxCollider2D hitbox;
 
     public void SetUp(int id, float setSpeed, int scene)
     {
+        
+
+
         lifeTimer = 0f;
         weakened = false;
+
+        if (mod.randomAngle)
+        {
+            mod.angleUp = Random.Range(-mod.angleRange, mod.angleRange);
+        }
 
         speed = setSpeed;
         bulletID = id;
@@ -34,8 +45,11 @@ public class EnemyBullet : MonoBehaviour
             lifeTimer += Time.deltaTime;
             if (lifeTimer > lifetime)
             {
-                gameObject.SetActive(false);
+                Death();
             }
+
+            speed += mod.speedUp * Time.deltaTime;
+            transform.eulerAngles += Vector3.forward * mod.angleUp * Time.deltaTime;
 
             //Debug.Log(transform.right + " " + transform.right * speed);
             transform.Translate(Vector3.right * speed * Time.deltaTime);
@@ -51,16 +65,25 @@ public class EnemyBullet : MonoBehaviour
         speed *= 0.3f;
     }
 
+    public void Death()
+    {
+        if (mod.spawnOnDeath)
+        {
+            EvalutePattern.instance.EvaluteBulletSequence(mod.bulletOnDeath, transform.position, EvalutePattern.instance.Boss.player.transform);
+        }
+        gameObject.SetActive(false);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.GetComponent<PlayerMove>().Damage(1);
-            gameObject.SetActive(false);
+            Death();
         }
         else if (collision.gameObject.CompareTag("Border"))
         {
-            gameObject.SetActive(false);
+            Death();
         }
     }
 }

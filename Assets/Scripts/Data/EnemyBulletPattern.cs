@@ -85,4 +85,3 @@ public class EnemyMoveSession
     [Space(10), Header("Time to next Session")]
     public float coolDown;
 }
-

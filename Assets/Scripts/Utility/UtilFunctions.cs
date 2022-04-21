@@ -5,11 +5,28 @@ using DG.Tweening;
 
 public static class UtilFunctions
 {
+    public static void GrowObject(GameObject obj)
+    {
+        obj.transform.localScale = Vector3.zero;
+        obj.transform.DOScale(Vector3.one, 0.1f);
+    }
+
     public static void PulseObject(GameObject obj, float time, float iOpacity, float fOpacity, int loops)
     {
         SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
         sr.DOKill();
         //sr.DOFade(0.5f, 0.1f).OnComplete(() => sr.DOFade(0f, 0.1f));
         sr.DOFade(iOpacity, time * 0.5f).OnComplete(() => sr.DOFade(fOpacity, time * 0.5f)).SetLoops(loops);
+    }
+
+    public static Vector2 Vec3ToVec2(Vector3 pos)
+    {
+        return new Vector2(pos.x, pos.y);
+    }
+
+    public static float AngleTowards(Vector3 pos, Vector3 target)
+    {
+        Vector3 dir = target - pos;
+        return Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
     }
 }

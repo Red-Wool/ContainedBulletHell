@@ -16,11 +16,11 @@ public class BossShoot : MonoBehaviour
 
     private float timer;
 
-    [SerializeField] private List<ObjectPool> bulletPools;
+    [SerializeField] private ObjectPool[] bulletPools; public ObjectPool[] BulletPools { get { return bulletPools; } }
     [SerializeField] private BulletWeaken[] weakBullets;
-    [SerializeField] private GameObject container;
+    [SerializeField] private GameObject container; public GameObject Container { get { return container; } }
 
-    [SerializeField] private int activeScene;
+    [SerializeField] private int activeScene; public int ActiveScene { get { return activeScene; } }
 
     public GameObject player;
 
@@ -62,7 +62,9 @@ public class BossShoot : MonoBehaviour
                 if (CheckTimer(curSequence.wait))
                 {
                     int val = Random.Range(0, curSession.spawnPos.Length);
-                    StartCoroutine(EvaluteBulletSequence(curSequence, curSession.spawnPos[val]));
+                    EvalutePattern.instance.EvaluteBulletSequence(curSequence, 
+                        UtilFunctions.Vec3ToVec2(transform.position) + curSession.spawnPos[val], 
+                        player.transform);
                     sequencePointer++;
                 }
             }
@@ -83,7 +85,7 @@ public class BossShoot : MonoBehaviour
 
     public void CheckBulletPool()
     {
-        for (int i = 0; i < bulletPools.Count; i++)
+        for (int i = 0; i < bulletPools.Length; i++)
         {
             bulletPools[i].AddObjects();
         }
@@ -99,7 +101,7 @@ public class BossShoot : MonoBehaviour
         return false;
     }
 
-    public void EvaluteBulletPattern(EnemyBulletPattern pattern, Vector2 pos, float angle, float extraSpeed)
+    /*public void EvaluteBulletPattern(EnemyBulletPattern pattern, Vector2 pos, float angle, float extraSpeed)
     {
         int key = pattern.key;
         for (int i = 0; i < pattern.bulletAngles.Length; i++)
@@ -133,12 +135,15 @@ public class BossShoot : MonoBehaviour
             angle += anglePlus;
 
             EvaluteBulletPattern(sequence.pattern, pos, angle, speedPlus);
-            yield return new WaitForSeconds(sequence.rate);
+            if (sequence.rate > 0f)
+            {
+                yield return new WaitForSeconds(sequence.rate);
+            }
 
             anglePlus += sequence.loopAngle;
             speedPlus += sequence.loopSpeed;
         }
-    }
+    }*/
 }
 
 [System.Serializable]

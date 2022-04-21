@@ -38,8 +38,7 @@ public class PlayerBullet : MonoBehaviour
 
     public void SetUp(StoredValue val, PlayerWeapon bullet, int scene)
     {
-        transform.localScale = Vector3.zero;
-        transform.DOScale(Vector3.one, 0.1f);
+        UtilFunctions.GrowObject(gameObject);
 
         intel = val;
         lifeTimer = 0f;
@@ -59,6 +58,8 @@ public class PlayerBullet : MonoBehaviour
                         intel.value += 2f;
                     break;
                 case PlayerWeapon.Damage:
+                    if (intel)
+                        intel.value += 10f;
                     collision.gameObject.GetComponent<BossShoot>().Damage(5);
                     break;
             }

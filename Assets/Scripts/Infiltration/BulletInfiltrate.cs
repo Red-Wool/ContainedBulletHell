@@ -15,7 +15,7 @@ public class BulletInfiltrate : MonoBehaviour
 
     private List<BulletWeaken> weakBullets;
     private string bulletSceneName;
-    private Vector3 lastPos;
+    public Vector3 lastPos { get; private set; }
 
     [HideInInspector] public InfiltrateStart scaler;
 
@@ -121,7 +121,7 @@ public class BulletInfiltrate : MonoBehaviour
         container.transform.DOScale(Vector3.one * 10f, 5f);
         //container.transform.DOMove(Vector3.down * 100, 5f).SetEase(Ease.OutExpo);
         yield return new WaitForSeconds(5f);
-        player.InfiltrateTransition(Vector3.zero, false);
+        player.InfiltrateTransition(lastPos, false);
         SoundManager.instance.infiltrateOut.Play();
         container.transform.position = Vector3.down * 100000;
     }
