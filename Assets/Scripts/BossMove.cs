@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossMove : MonoBehaviour
-{
+public class BossMove : MonoBehaviour {
     [SerializeField] private BossMoveData moveData;
 
     private int sessionPointer;
@@ -15,9 +14,8 @@ public class BossMove : MonoBehaviour
     [SerializeField] private int activeScene;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start() {
+
     }
 
     // Update is called once per frame
