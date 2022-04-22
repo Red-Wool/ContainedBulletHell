@@ -13,6 +13,8 @@ public class BulletInfiltrate : MonoBehaviour
     public GameObject portal;
     public GameObject container;
 
+    public BossHPBar bossBar;
+
     private List<BulletWeaken> weakBullets;
     private string bulletSceneName;
     public Vector3 lastPos { get; private set; }
@@ -43,9 +45,10 @@ public class BulletInfiltrate : MonoBehaviour
 
     public bool CheckGetAll()
     {
-        if (weakBullets.Count == 0)
+        if (weakBullets.Count == 0 && !boss.Final)
         {
             boss.Second();
+            bossBar.ChangeBar();
             return true;
         }
         return false;
@@ -57,6 +60,7 @@ public class BulletInfiltrate : MonoBehaviour
         {
             if (weakBullets[i].sceneName == bulletSceneName)
             {
+                weakBullets[i].display.transform.DOScale(Vector3.zero, 1f).SetEase(Ease.OutCubic);
                 weakBullets.Remove(weakBullets[i]);
             }
         }
@@ -73,6 +77,11 @@ public class BulletInfiltrate : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void BossPortal()
+    {
+        ActivateBulletInfiltration(boss.transform, boss.finalScene);
     }
 
     public void ActivateBulletInfiltration(Transform obj, string sceneName)
@@ -101,7 +110,8 @@ public class BulletInfiltrate : MonoBehaviour
             portal.transform.DOScale(Vector3.zero, 1f);
             lastPos = parent.transform.position;
 
-            parent.gameObject.SetActive(false);
+            if (!boss.Final)
+                parent.gameObject.SetActive(false);
         }
     }
 
@@ -134,7 +144,17 @@ public class BulletInfiltrate : MonoBehaviour
         yield return new WaitForSeconds(2f);
         SoundManager.instance.infiltrateOut.Play();
         player.InfiltrateTransition(lastPos, false);
+
         yield return new WaitForSeconds(3f);
+        if (boss.Phase2 && !boss.Final)
+        {
+            yield return new WaitForSeconds(4f);
+        }
+        else if (boss.Final)
+        {
+            Debug.Log("You Win!");
+        }
+
         ScenePause.instance.activeScene = 0;
         //SceneManager.UnloadSceneAsync(bulletSceneName);
 

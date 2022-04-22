@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/TreeTank.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/BlueSky.unity
     guid: 2c9bf4c033896d14489805b580aff40a
+  - enabled: 1
+    path: Assets/Scenes/TestFinal.unity
+    guid: dad854d917990bf489e929a56c2b3c8b
   m_configObjects: {}

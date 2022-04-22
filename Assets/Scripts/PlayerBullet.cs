@@ -65,7 +65,7 @@ public class PlayerBullet : MonoBehaviour
                 case PlayerWeapon.Weaken:
                     if (collision.GetComponent<BossShoot>().Final)
                     {
-
+                        BulletInfiltrate.instance.BossPortal();
                     }
                     break;
             }

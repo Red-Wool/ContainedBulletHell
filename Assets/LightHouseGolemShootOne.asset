@@ -10,22 +10,141 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3af785f22f6620e4eb411e606e483813, type: 3}
-  m_Name: LightHouseGolemShootOne
+  m_Name: LighthouseGolemShootOne
   m_EditorClassIdentifier: 
   session:
-  - sequence: []
-    nextSessions: 
-    coolDown: 0
-    spawnPos: []
-  - sequence: []
-    nextSessions: 
-    coolDown: 0
-    spawnPos: []
-  - sequence: []
-    nextSessions: 
-    coolDown: 0
-    spawnPos: []
-  - sequence: []
-    nextSessions: 
-    coolDown: 0
-    spawnPos: []
+  - sequence:
+    - pattern:
+        bulletAngles:
+        - 0
+        speed: 20
+        key: 0
+      loops: 50
+      rate: 0
+      wait: 1
+      aimAtPlayer: 1
+      angleOffset: 3
+      loopAngle: 0
+      loopSpeed: 0.1
+    - pattern:
+        bulletAngles:
+        - 0
+        speed: 30
+        key: 1
+      loops: 8
+      rate: 0.1
+      wait: 0
+      aimAtPlayer: 1
+      angleOffset: 0
+      loopAngle: 0
+      loopSpeed: 0
+    nextSessions: 010000000200000003000000
+    coolDown: 0.5
+    spawnPos:
+    - {x: 0, y: 0}
+  - sequence:
+    - pattern:
+        bulletAngles:
+        - 5
+        - -5
+        - 0
+        - 180
+        - 185
+        - 175
+        speed: 20
+        key: 0
+      loops: 2
+      rate: 0
+      wait: 1
+      aimAtPlayer: 1
+      angleOffset: 0
+      loopAngle: 90
+      loopSpeed: 0
+    - pattern:
+        bulletAngles:
+        - 5
+        - -5
+        - 0
+        speed: -5
+        key: 1
+      loops: 7
+      rate: 0.3
+      wait: 1
+      aimAtPlayer: 1
+      angleOffset: 70
+      loopAngle: 0
+      loopSpeed: 0
+    nextSessions: 0000000003000000
+    coolDown: 1
+    spawnPos:
+    - {x: 0, y: 0}
+  - sequence:
+    - pattern:
+        bulletAngles:
+        - 5
+        - -5
+        - 0
+        - 180
+        - 185
+        - 175
+        speed: 20
+        key: 0
+      loops: 2
+      rate: 0
+      wait: 1
+      aimAtPlayer: 1
+      angleOffset: 0
+      loopAngle: 90
+      loopSpeed: 0
+    - pattern:
+        bulletAngles:
+        - -40
+        - -20
+        - 0
+        - 20
+        - 40
+        - 60
+        - -60
+        speed: -20
+        key: 2
+      loops: 10
+      rate: 0.2
+      wait: 0.8
+      aimAtPlayer: 1
+      angleOffset: 0
+      loopAngle: 0
+      loopSpeed: 0
+    nextSessions: 0000000003000000
+    coolDown: 1
+    spawnPos:
+    - {x: 0, y: 0}
+  - sequence:
+    - pattern:
+        bulletAngles:
+        - 0
+        speed: -20
+        key: 2
+      loops: 36
+      rate: 0
+      wait: 1
+      aimAtPlayer: 0
+      angleOffset: 0
+      loopAngle: 10
+      loopSpeed: 0
+    - pattern:
+        bulletAngles:
+        - 10
+        - -10
+        speed: 30
+        key: 1
+      loops: 6
+      rate: 0
+      wait: 1
+      aimAtPlayer: 0
+      angleOffset: 180
+      loopAngle: 60
+      loopSpeed: 0
+    nextSessions: 0000000001000000
+    coolDown: 1
+    spawnPos:
+    - {x: 0, y: 0}

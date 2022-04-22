@@ -12,7 +12,7 @@ public class BossShoot : MonoBehaviour
 
     private int sessionPointer;
     private int sequencePointer;
-    private bool second;
+    private bool second; public bool Phase2 { get { return second; } }
     private bool final; public bool Final { get { return final; } }
     public string finalScene;
 
@@ -165,4 +165,5 @@ public class BulletWeaken
 {
     public int weakID;
     public string sceneName;
+    public GameObject display;
 }

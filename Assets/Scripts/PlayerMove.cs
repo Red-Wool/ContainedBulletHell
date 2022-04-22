@@ -85,11 +85,14 @@ public class PlayerMove : MonoBehaviour
         //transform.localPosition = Vector3.zero;
         transform.DOScale(Vector3.one, 2f).SetEase(Ease.OutCubic);
         transform.DOMove(pos, 3f).SetEase(Ease.OutElastic);
-        yield return new WaitForSeconds(3f);
-        if (BulletInfiltrate.instance.CheckGetAll())
+
+        if (BulletInfiltrate.instance.CheckGetAll() && !BulletInfiltrate.instance.boss.Final)
         {
             shoot.Second();
+            yield return new WaitForSeconds(4f);
         }
+        yield return new WaitForSeconds(3f);
+        
         shoot.canControl = true;
         shoot.transform.localPosition = Vector3.zero;
         StartCoroutine(Invincible(1.5f));
