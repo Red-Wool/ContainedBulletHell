@@ -69,7 +69,7 @@ public class EnemyBullet : MonoBehaviour
     {
         if (mod.spawnOnDeath)
         {
-            EvalutePattern.instance.EvaluteBulletSequence(mod.bulletOnDeath, transform.position, EvalutePattern.instance.Boss.player.transform);
+            EvalutePattern.instance.EvaluteBulletSequence(mod.bulletOnDeath, transform, EvalutePattern.instance.Boss.player.transform);
         }
         gameObject.SetActive(false);
     }

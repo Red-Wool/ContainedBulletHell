@@ -58,22 +58,25 @@ public class EnemyBulletSession
     public Vector2[] spawnPos;
 }
 
+[System.Serializable]
 public class EnemyMovePattern
 {
     public Vector2[] pos;
+    public float time;
     public Ease easeStyle;
 }
 
+[System.Serializable]
 public class EnemyMoveSequence
 {
     public EnemyMovePattern pattern;
 
     [Space(10)]
-    public int loops;
-    public float rate;
+    public Vector2 randomDisplace;
     public float wait;
 }
 
+[System.Serializable]
 public class EnemyMoveSession
 {
     [Header("Move")]

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class EvalutePattern : MonoBehaviour
 {
@@ -37,23 +38,31 @@ public class EvalutePattern : MonoBehaviour
         }
     }
 
-    public void EvaluteBulletSequence(EnemyBulletSequence sequence, Vector2 pos, Transform target)
+    public void EvaluteBulletSequence(EnemyBulletSequence sequence, Transform pos, Transform target)
     {
-        StartCoroutine(PlayBulletSequence(sequence, pos, target));
+        EvaluteBulletSequence(sequence, pos, target, new Vector2[] { Vector2.zero });
     }
 
-    public IEnumerator PlayBulletSequence(EnemyBulletSequence sequence, Vector2 pos, Transform target)
+    public void EvaluteBulletSequence(EnemyBulletSequence sequence, Transform pos, Transform target, Vector2[] randPos)
+    {
+        StartCoroutine(PlayBulletSequence(sequence, pos, target, randPos));
+    }
+
+    public IEnumerator PlayBulletSequence(EnemyBulletSequence sequence, Transform pos, Transform target, Vector2[] randPos)
     {
         float angle, anglePlus = 0, speedPlus = 0;
+        int r = Random.Range(0, randPos.Length);
+        Vector3 spawn;
 
         for (int i = 0; i < sequence.loops; i++)
         {
-            angle = (sequence.aimAtPlayer) ? UtilFunctions.AngleTowards(pos, target.position) : 0f;
+            spawn = randPos[r] + UtilFunctions.Vec3ToVec2(pos.position);
 
-            angle += Random.Range(-sequence.angleOffset, sequence.angleOffset);
-            angle += anglePlus;
+            angle = (sequence.aimAtPlayer) ? UtilFunctions.AngleTowards(spawn, target.position) : 0f;
 
-            EvaluteBulletPattern(sequence.pattern, pos, angle, speedPlus);
+            angle += Random.Range(-sequence.angleOffset, sequence.angleOffset) + anglePlus;
+
+            EvaluteBulletPattern(sequence.pattern, spawn, angle, speedPlus);
             if (sequence.rate > 0f)
             {
                 yield return new WaitForSeconds(sequence.rate);
@@ -62,5 +71,11 @@ public class EvalutePattern : MonoBehaviour
             anglePlus += sequence.loopAngle;
             speedPlus += sequence.loopSpeed;
         }
+    }
+
+    public void EvaluteMoveSequence(Transform obj, EnemyMoveSequence sequence)
+    {
+        EnemyMovePattern pattern = sequence.pattern;
+        obj.DOLocalMove(pattern.pos[Random.Range(0, pattern.pos.Length)] + UtilFunctions.RandVec2Range(sequence.randomDisplace), pattern.time).SetEase(pattern.easeStyle);
     }
 }

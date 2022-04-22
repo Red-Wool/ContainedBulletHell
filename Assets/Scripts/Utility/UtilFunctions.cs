@@ -24,9 +24,24 @@ public static class UtilFunctions
         return new Vector2(pos.x, pos.y);
     }
 
+    public static Vector2 RandVec2Range(Vector2 range)
+    {
+        return new Vector2(Random.Range(-range.x, range.x), Random.Range(-range.y, range.y));
+    }
+
     public static float AngleTowards(Vector3 pos, Vector3 target)
     {
         Vector3 dir = target - pos;
         return Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+    }
+
+    public static bool CheckTimer(ref float timer, float time)
+    {
+        if (timer > time)
+        {
+            timer -= time;
+            return true;
+        }
+        return false;
     }
 }

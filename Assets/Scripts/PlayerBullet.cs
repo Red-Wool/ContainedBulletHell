@@ -59,8 +59,14 @@ public class PlayerBullet : MonoBehaviour
                     break;
                 case PlayerWeapon.Damage:
                     if (intel)
-                        intel.value += 10f;
+                        intel.value += 20f;
                     collision.gameObject.GetComponent<BossShoot>().Damage(5);
+                    break;
+                case PlayerWeapon.Weaken:
+                    if (collision.GetComponent<BossShoot>().Final)
+                    {
+
+                    }
                     break;
             }
             

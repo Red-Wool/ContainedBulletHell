@@ -11,6 +11,7 @@ public class BossMove : MonoBehaviour
 
     private float timer;
 
+
     [SerializeField] private int activeScene;
 
     // Start is called before the first frame update
@@ -22,33 +23,35 @@ public class BossMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ScenePause.instance.activeScene == activeScene)
+        if (!BulletInfiltrate.instance.boss.Final)
         {
-            timer += Time.deltaTime;
-
-            if (sequencePointer == curSession.sequence.Length)
+            EnemyMoveSession curSession = moveData.Session[sessionPointer];
+            if (ScenePause.instance.activeScene == activeScene)
             {
-                if (CheckTimer(curSession.coolDown))
-                {
-                    int[] next = curSession.nextSessions;
+                timer += Time.deltaTime;
 
-                    sessionPointer = next[Random.Range(0, next.Length)];
-                    sequencePointer = 0;
+                if (sequencePointer == curSession.sequence.Length)
+                {
+                    if (UtilFunctions.CheckTimer(ref timer, curSession.coolDown))
+                    {
+                        int[] next = curSession.nextSessions;
+
+                        sessionPointer = next[Random.Range(0, next.Length)];
+                        sequencePointer = 0;
+                    }
                 }
-            }
-            else
-            {
-                EnemyBulletSequence curSequence = curSession.sequence[sequencePointer];
-
-                if (CheckTimer(curSequence.wait))
+                else
                 {
-                    int val = Random.Range(0, curSession.spawnPos.Length);
-                    EvalutePattern.instance.EvaluteBulletSequence(curSequence,
-                        UtilFunctions.Vec3ToVec2(transform.position) + curSession.spawnPos[val],
-                        player.transform);
-                    sequencePointer++;
+                    EnemyMoveSequence curSequence = curSession.sequence[sequencePointer];
+
+                    if (UtilFunctions.CheckTimer(ref timer, curSequence.wait))
+                    {
+                        EvalutePattern.instance.EvaluteMoveSequence(transform, curSequence);
+                        sequencePointer++;
+                    }
                 }
             }
         }
     }
+    
 }

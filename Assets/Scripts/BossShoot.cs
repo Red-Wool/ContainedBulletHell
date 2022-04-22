@@ -13,6 +13,8 @@ public class BossShoot : MonoBehaviour
     private int sessionPointer;
     private int sequencePointer;
     private bool second;
+    private bool final; public bool Final { get { return final; } }
+    public string finalScene;
 
     private float timer;
 
@@ -27,6 +29,9 @@ public class BossShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        second = false;
+        final = false;
+
         CheckBulletPool();
         bossHP.value = maxHP;
         sessionPointer = Random.Range(0, bulletData.Session.Length - 1);
@@ -41,7 +46,14 @@ public class BossShoot : MonoBehaviour
     {
         if (ScenePause.instance.activeScene == activeScene)
         {
-            timer += Time.deltaTime;
+            if (bossHP.value <= 0)
+            {
+                final = true;
+            }
+            else
+            {
+                timer += Time.deltaTime;
+            }
 
             EnemyBulletSession curSession = second ? secondData.Session[sessionPointer] : bulletData.Session[sessionPointer];
 
@@ -61,10 +73,8 @@ public class BossShoot : MonoBehaviour
 
                 if (CheckTimer(curSequence.wait))
                 {
-                    int val = Random.Range(0, curSession.spawnPos.Length);
-                    EvalutePattern.instance.EvaluteBulletSequence(curSequence, 
-                        UtilFunctions.Vec3ToVec2(transform.position) + curSession.spawnPos[val], 
-                        player.transform);
+                    
+                    EvalutePattern.instance.EvaluteBulletSequence(curSequence, transform, player.transform, curSession.spawnPos);
                     sequencePointer++;
                 }
             }
@@ -74,6 +84,10 @@ public class BossShoot : MonoBehaviour
     public void Damage(float damage)
     {
         bossHP.value -= damage;
+        if (bossHP.value <= 0)
+        {
+            final = true;
+        }
     }
 
     public void Second()

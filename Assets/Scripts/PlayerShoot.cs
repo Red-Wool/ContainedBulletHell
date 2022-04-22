@@ -103,28 +103,31 @@ public class PlayerShoot : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("EnemyBullet"))
+        if (canControl)
         {
-            Debug.Log("Gaming!");
-            intel.value += 6;
-            SoundManager.instance.graze.Play();
+            if (collision.gameObject.CompareTag("EnemyBullet"))
+            {
+                Debug.Log("Gaming!");
+                intel.value += 6;
+                SoundManager.instance.graze.Play();
 
-            UtilFunctions.PulseObject(graze, 0.2f, 0.5f, 0f, 1);
+                UtilFunctions.PulseObject(graze, 0.2f, 0.5f, 0f, 1);
 
-        }
-        else if (collision.gameObject.CompareTag("Portal"))
-        {
-            BulletInfiltrate.instance.EnterBullet(collision.gameObject.GetComponent<InfiltratePortal>().scene);
-            SoundManager.instance.infiltrateIn.Play();
-            move.InfiltrateTransition(collision.gameObject.transform.position, true);
-        }
-        else if (collision.gameObject.CompareTag("Exit"))
-        {
-            collision.gameObject.SetActive(false);
-            BulletInfiltrate.instance.ExitBullet();
-            BulletInfiltrate.instance.Victory();
-            SoundManager.instance.infiltrateIn.Play();
-            move.InfiltrateTransition(collision.gameObject.transform.position, true);
+            }
+            else if (collision.gameObject.CompareTag("Portal"))
+            {
+                BulletInfiltrate.instance.EnterBullet(collision.gameObject.GetComponent<InfiltratePortal>().scene);
+                SoundManager.instance.infiltrateIn.Play();
+                move.InfiltrateTransition(collision.gameObject.transform.position, true);
+            }
+            else if (collision.gameObject.CompareTag("Exit"))
+            {
+                collision.gameObject.SetActive(false);
+                BulletInfiltrate.instance.ExitBullet();
+                BulletInfiltrate.instance.Victory();
+                SoundManager.instance.infiltrateIn.Play();
+                move.InfiltrateTransition(Vector3.zero, true);
+            }
         }
     }
 
