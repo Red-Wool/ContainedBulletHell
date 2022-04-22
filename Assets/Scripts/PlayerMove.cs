@@ -61,7 +61,7 @@ public class PlayerMove : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Hit");
+        //Debug.Log("Hit");
     }
 
     public void InfiltrateTransition(Vector3 pos, bool flag)
