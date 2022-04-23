@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed283ed2358dc74c9ef8c26d29e351c, type: 3}
+  m_Name: LightHouseMove
+  m_EditorClassIdentifier: 
+  session:
+  - sequence:
+    - pattern:
+        pos:
+        - {x: 22, y: -4}
+        time: 2
+        easeStyle: 21
+      randomDisplace: {x: 2, y: 6}
+      wait: 1
+    nextSessions: 000000000000000001000000
+    coolDown: 0
+  - sequence:
+    - pattern:
+        pos:
+        - {x: 25, y: 11}
+        time: 2
+        easeStyle: 29
+      randomDisplace: {x: 1, y: 1}
+      wait: 3
+    - pattern:
+        pos:
+        - {x: -25, y: 11}
+        time: 3
+        easeStyle: 22
+      randomDisplace: {x: 1, y: 1}
+      wait: 4
+    nextSessions: 02000000
+    coolDown: 1.5
+  - sequence:
+    - pattern:
+        pos:
+        - {x: -22, y: -4}
+        time: 2
+        easeStyle: 21
+      randomDisplace: {x: 2, y: 6}
+      wait: 1
+    nextSessions: 020000000200000003000000
+    coolDown: 0
+  - sequence:
+    - pattern:
+        pos:
+        - {x: -25, y: 11}
+        time: 2
+        easeStyle: 29
+      randomDisplace: {x: 1, y: 1}
+      wait: 3
+    - pattern:
+        pos:
+        - {x: 25, y: 11}
+        time: 3
+        easeStyle: 21
+      randomDisplace: {x: 1, y: 1}
+      wait: 4
+    nextSessions: 00000000
+    coolDown: 1.5

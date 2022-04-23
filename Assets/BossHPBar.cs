@@ -43,7 +43,7 @@ public class BossHPBar : MonoBehaviour
         for (int i = 0; i < displays.Length; i++)
         {
             displays[i].transform.DOMove(savedPos, 3f).SetEase(Ease.InOutQuad);
-            final.transform.DOScale(Vector3.zero, 2.5f).SetEase(Ease.OutCubic);
+            displays[i].transform.DOScale(Vector3.zero, 2.5f).SetEase(Ease.OutCubic);
         }
 
         yield return new WaitForSeconds(3f);

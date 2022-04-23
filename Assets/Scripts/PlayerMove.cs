@@ -9,6 +9,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private StoredValue hp;
 
     [SerializeField] private PlayerShoot shoot;
+    [SerializeField] private GameObject sprite;
 
     private Rigidbody2D rb;
 
@@ -52,7 +53,7 @@ public class PlayerMove : MonoBehaviour
 
     public IEnumerator Invincible(float time)
     {
-        UtilFunctions.PulseObject(shoot.gameObject, 0.6f, 0.1f, 1f, (int)(time / 0.3f));
+        UtilFunctions.PulseObject(sprite, 0.6f, 0.1f, 1f, (int)(time / 0.3f));
         GetComponent<BoxCollider2D>().enabled = false;
         yield return new WaitForSeconds(time);
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -36, 36), Mathf.Clamp(transform.position.y, -20.5f, 20.5f));
