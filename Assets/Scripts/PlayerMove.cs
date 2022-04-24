@@ -11,11 +11,14 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private PlayerShoot shoot;
     [SerializeField] private GameObject sprite;
 
+    private bool invincible;
+
     private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
+        invincible = false;
         hp.value = 4;
         rb = GetComponent<Rigidbody2D>();
     }
@@ -43,7 +46,7 @@ public class PlayerMove : MonoBehaviour
 
     public void Damage(int damage)
     {
-        if (shoot.canControl)
+        if (shoot.canControl && !invincible)
         {
             hp.value -= damage;
             SoundManager.instance.hurt.Play();
@@ -54,10 +57,10 @@ public class PlayerMove : MonoBehaviour
     public IEnumerator Invincible(float time)
     {
         UtilFunctions.PulseObject(sprite, 0.6f, 0.1f, 1f, (int)(time / 0.3f));
-        GetComponent<BoxCollider2D>().enabled = false;
+        invincible = true;
         yield return new WaitForSeconds(time);
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -36, 36), Mathf.Clamp(transform.position.y, -20.5f, 20.5f));
-        GetComponent<BoxCollider2D>().enabled = true;
+        //transform.position = new Vector3(Mathf.Clamp(transform.position.x, -36, 36), Mathf.Clamp(transform.position.y, -20.5f, 20.5f));
+        invincible = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
