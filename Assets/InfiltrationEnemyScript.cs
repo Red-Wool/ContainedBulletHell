@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class InfiltrationEnemyScript : MonoBehaviour {
     public float speed = 5;
-    public float bulletSpeed = 8;
-    public float bulletLifetime = 10;
-    public float bulletDelay = 2;
+    public float bulletSpeed = 17;
+    public float bulletLifetime = 5;
+    public float bulletDelay = 0.8f;
+    public float hp = 10;
 
     public GameObject bulletPrefab;
     private GameObject player;
@@ -23,8 +24,19 @@ public class InfiltrationEnemyScript : MonoBehaviour {
         // check if it's time to spawn a new bullet
         if (bdc <= 0) {
             bdc = bulletDelay;
-            InfiltrateBulletScript b = Instantiate(bulletPrefab).GetComponent<InfiltrateBulletScript>();
-            b.SetUp(Vector3.MoveTowards(transform.position, player.transform.position).normalized * bulletSpeed, bulletLifetime);
+            Vector3 bulletMovement = (player.transform.position - transform.position).normalized;
+            Vector3 offsetSpawnPoint = Vector3.MoveTowards(transform.position, player.transform.position, 3);
+
+            InfiltrateBulletScript b = Instantiate(bulletPrefab, offsetSpawnPoint, Quaternion.identity).GetComponent<InfiltrateBulletScript>();
+            b.SetUp((bulletMovement*bulletSpeed), bulletLifetime);
+        }
+    }
+
+    public void Damage() {
+        hp--;
+        if (hp <= 0) {
+            // maybe we can add a cool effect here, or require the player to kill all the enemies before getting the star?
+            Destroy(gameObject);
         }
     }
 }
