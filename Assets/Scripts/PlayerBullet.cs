@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class PlayerBullet : MonoBehaviour
-{
+public class PlayerBullet : MonoBehaviour {
     public float speed;
     public float lifetime;
 
@@ -14,30 +13,25 @@ public class PlayerBullet : MonoBehaviour
     private int activeScene;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         lifeTimer = 0f;
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (ScenePause.instance.activeScene == activeScene)
-        {
+    void Update() {
+        if (ScenePause.instance.activeScene == activeScene) {
             lifeTimer += Time.deltaTime;
-            if (lifeTimer > lifetime)
-            {
+            if (lifeTimer > lifetime) {
                 gameObject.SetActive(false);
             }
 
             //Debug.Log(transform.right + " " + transform.right * speed);
             transform.Translate(Vector3.right * speed * Time.deltaTime);
         }
-        
+
     }
 
-    public void SetUp(StoredValue val, PlayerWeapon bullet, int scene)
-    {
+    public void SetUp(StoredValue val, PlayerWeapon bullet, int scene) {
         UtilFunctions.GrowObject(gameObject);
 
         intel = val;
@@ -47,12 +41,9 @@ public class PlayerBullet : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            switch (type)
-            {
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.CompareTag("Enemy")) {
+            switch (type) {
                 case PlayerWeapon.Intel:
                     if (intel)
                         intel.value += 2f;
@@ -63,21 +54,18 @@ public class PlayerBullet : MonoBehaviour
                     collision.gameObject.GetComponent<BossShoot>().Damage(5);
                     break;
                 case PlayerWeapon.Weaken:
-                    if (collision.GetComponent<BossShoot>().Final)
-                    {
+                    if (collision.GetComponent<BossShoot>().Final) {
                         BulletInfiltrate.instance.BossPortal();
                     }
                     break;
             }
-            
+
             gameObject.SetActive(false);
-        }
-        else if (collision.gameObject.CompareTag("Border"))
-        {
+        } else if (collision.gameObject.CompareTag("InfEnemy")) {
+            collision.gameObject.GetComponent<InfiltrationEnemyScript>().Damage();
+        } else if (collision.gameObject.CompareTag("Border")) {
             gameObject.SetActive(false);
-        }
-        else if (type == PlayerWeapon.Weaken && collision.gameObject.CompareTag("EnemyBullet"))
-        {
+        } else if (type == PlayerWeapon.Weaken && collision.gameObject.CompareTag("EnemyBullet")) {
             collision.gameObject.GetComponent<EnemyBullet>().Weaken();
             gameObject.SetActive(false);
         }
