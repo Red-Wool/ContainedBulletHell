@@ -19,8 +19,7 @@ public class EnemyBullet : MonoBehaviour
 
     public void SetUp(int id, float setSpeed, int scene)
     {
-        
-
+        UtilFunctions.GrowObject(gameObject);
 
         lifeTimer = 0f;
         weakened = false;

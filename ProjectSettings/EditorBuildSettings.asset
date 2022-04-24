@@ -12,6 +12,21 @@ EditorBuildSettings:
     path: Assets/Scenes/BlueSky.unity
     guid: 2c9bf4c033896d14489805b580aff40a
   - enabled: 1
-    path: Assets/Scenes/TestFinal.unity
+    path: Assets/Scenes/Infiltration/TestFinal.unity
     guid: dad854d917990bf489e929a56c2b3c8b
+  - enabled: 1
+    path: Assets/Scenes/Infiltration/Acorn.unity
+    guid: 886ee3135840d864a9c96f1f1061be3e
+  - enabled: 1
+    path: Assets/Scenes/Infiltration/PineconeBomb.unity
+    guid: ea10281cc6cff7c42ab0cdd78d2e4562
+  - enabled: 1
+    path: Assets/Scenes/Infiltration/SandStone.unity
+    guid: 76467b65b1aef7a44b5394a673496bce
+  - enabled: 1
+    path: Assets/Scenes/Infiltration/BoatBlast.unity
+    guid: 1a464979ce7e1d041bd6f33c4d107ef4
+  - enabled: 1
+    path: Assets/Scenes/Infiltration/LightTrap.unity
+    guid: 833d2a64492384842b438f03d16fa96b
   m_configObjects: {}

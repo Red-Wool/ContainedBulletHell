@@ -200,7 +200,7 @@ MonoBehaviour:
   mod:
     speedUp: 3
     randomAngle: 1
-    angleRange: 75
+    angleRange: 70
     angleUp: 0
     spawnOnDeath: 0
     bulletOnDeath:

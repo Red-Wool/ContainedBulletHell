@@ -58,7 +58,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.8, y: 1.8}
   m_EdgeRadius: 0
 --- !u!50 &8515462645527945738
 Rigidbody2D:
@@ -94,22 +94,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  lifetime: 10
+  lifetime: 5
   mod:
     speedUp: 0
     randomAngle: 0
     angleRange: 0
     angleUp: 0
-    spawnOnDeath: 0
+    spawnOnDeath: 1
     bulletOnDeath:
       pattern:
-        bulletAngles: []
-        speed: 0
-        key: 0
-      loops: 0
+        bulletAngles:
+        - 0
+        - 10
+        - -10
+        - 50
+        - -50
+        speed: 15
+        key: 3
+      loops: 1
       rate: 0
       wait: 0
-      aimAtPlayer: 0
+      aimAtPlayer: 1
       angleOffset: 0
       loopAngle: 0
       loopSpeed: 0
@@ -138,7 +143,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4837409715319431872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: -0.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 1349572970365689668}
@@ -183,7 +188,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b84a358fbe1dc05498ca897985cd8c8d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 58663bd1a36317a47854a99712837e8f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

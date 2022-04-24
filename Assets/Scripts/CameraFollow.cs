@@ -15,7 +15,7 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 pos = Vector2.Lerp(transform.position, ScenePause.instance.activeScene == 1 ? player.transform.position : Vector3.zero, 0.1f);
+        Vector2 pos = Vector2.Lerp(transform.position, ScenePause.instance.activeScene == 1 ? player.transform.position : Vector3.zero, Time.deltaTime * 3f);
         transform.position = new Vector3(pos.x, pos.y, transform.position.z);
     }
 }

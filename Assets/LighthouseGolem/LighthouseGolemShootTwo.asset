@@ -135,7 +135,7 @@ MonoBehaviour:
         bulletAngles:
         - 10
         - -10
-        speed: 20
+        speed: 17
         key: 1
       loops: 6
       rate: 0
