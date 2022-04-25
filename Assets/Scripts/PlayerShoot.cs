@@ -60,6 +60,7 @@ public class PlayerShoot : MonoBehaviour
 
             if (Input.GetMouseButton(0) && rateTimer > shootRate)
             {
+                ParticleManager.instance.shoot.Play();
                 if (second)
                 {
                     for (int i = 0; i < upgradeShot.Length; i++)
@@ -78,6 +79,7 @@ public class PlayerShoot : MonoBehaviour
             {
                 intel.value = 0f;
                 Shoot(weakLaser.GetObject(), angle, PlayerWeapon.Weaken);
+                ParticleManager.instance.Toggle(ParticleManager.instance.intel, false);
                 SoundManager.instance.laser.Play();
             }
         }
@@ -97,7 +99,7 @@ public class PlayerShoot : MonoBehaviour
         obj.transform.position = transform.position;
         obj.transform.rotation = Quaternion.Euler(Vector3.forward * angle);
 
-        obj.GetComponent<PlayerBullet>().SetUp(intel, type, ScenePause.instance.activeScene);
+        obj.GetComponent<PlayerBullet>().SetUp(intel, type);
 
     }
 
@@ -107,7 +109,6 @@ public class PlayerShoot : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("EnemyBullet"))
             {
-                Debug.Log("Gaming!");
                 intel.value += 6;
                 SoundManager.instance.graze.Play();
 

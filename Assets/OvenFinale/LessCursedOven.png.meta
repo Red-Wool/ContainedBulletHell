@@ -1,25 +1,28 @@
 fileFormatVersion: 2
-guid: e5c8070f5b0488245bec6afa4648ff5c
+guid: 67f349e5eabf5db4287a39f61842d357
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6443960084092261387
-    second: CursedOven_0
+      213: -4057700774686240859
+    second: LessCursedOven_0
   - first:
-      213: -2511598418506276881
-    second: CursedOven_1
+      213: 5908589543385104692
+    second: LessCursedOven_1
   - first:
-      213: -6481625529552785754
-    second: CursedOven_2
+      213: -5041195492226494925
+    second: LessCursedOven_2
   - first:
-      213: -6866490004891493911
-    second: CursedOven_3
+      213: 8719754033317531218
+    second: LessCursedOven_3
   - first:
-      213: -944407776008829008
-    second: CursedOven_4
+      213: 718633074136392370
+    second: LessCursedOven_4
   - first:
-      213: 1012049770481842379
-    second: CursedOven_5
+      213: -2949789491047136604
+    second: LessCursedOven_5
+  - first:
+      213: 5463178241214845721
+    second: LessCursedOven_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -129,7 +132,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CursedOven_0
+      name: LessCursedOven_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,20 +140,20 @@ TextureImporter:
         width: 207
         height: 207
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fb62e0f1747296a0800000000000000
-      internalID: -6443960084092261387
+      spriteID: 5afcfffd4a620b7c0800000000000000
+      internalID: -4057700774686240859
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CursedOven_1
+      name: LessCursedOven_1
       rect:
         serializedVersion: 2
         x: 207
@@ -158,20 +161,41 @@ TextureImporter:
         width: 207
         height: 207
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fef108e9b82052dd0800000000000000
-      internalID: -2511598418506276881
+      spriteID: 4318e0972e68ff150800000000000000
+      internalID: 5908589543385104692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CursedOven_2
+      name: LessCursedOven_2
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 414
+        width: 207
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33e0a82c8631a0ab0800000000000000
+      internalID: -5041195492226494925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LessCursedOven_3
       rect:
         serializedVersion: 2
         x: 0
@@ -179,20 +203,20 @@ TextureImporter:
         width: 207
         height: 207
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ae27e70ce3ac06a0800000000000000
-      internalID: -6481625529552785754
+      spriteID: 25ecba4181ac20970800000000000000
+      internalID: 8719754033317531218
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CursedOven_3
+      name: LessCursedOven_4
       rect:
         serializedVersion: 2
         x: 207
@@ -200,20 +224,41 @@ TextureImporter:
         width: 207
         height: 207
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e91ca488b355b0a0800000000000000
-      internalID: -6866490004891493911
+      spriteID: 2b22fb339f819f900800000000000000
+      internalID: 718633074136392370
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CursedOven_4
+      name: LessCursedOven_5
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 207
+        width: 207
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a284f7261e3017d0800000000000000
+      internalID: -2949789491047136604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LessCursedOven_6
       rect:
         serializedVersion: 2
         x: 0
@@ -221,35 +266,14 @@ TextureImporter:
         width: 207
         height: 207
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b780e3a12ac4e2f0800000000000000
-      internalID: -944407776008829008
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CursedOven_5
-      rect:
-        serializedVersion: 2
-        x: 207
-        y: 0
-        width: 207
-        height: 207
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bc8f59877e58b0e00800000000000000
-      internalID: 1012049770481842379
+      spriteID: 913114c4aab11db40800000000000000
+      internalID: 5463178241214845721
       vertices: []
       indices: 
       edges: []

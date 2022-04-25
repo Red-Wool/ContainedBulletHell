@@ -75,12 +75,20 @@ public class PlayerMove : MonoBehaviour
             shoot.canControl = false;
             transform.DOScale(Vector3.zero, 2f).SetEase(Ease.OutCubic);
             transform.DOMove(pos, 3f).SetEase(Ease.OutElastic).OnComplete(() => transform.DOMove(Vector3.zero, 8f));
+            ParticleManager.instance.PlayParticle(ParticleManager.instance.infiltrateEnter, pos);
         }
         else
         {
-            hp.value = Mathf.Min(hp.value + 1, 4);
+            
+            ParticleManager.instance.PlayParticle(ParticleManager.instance.infiltrateExit, pos);
             StartCoroutine(BecomeActive(pos));
         }
+    }
+
+    public void Heal(int num)
+    {
+        hp.value = Mathf.Min(hp.value + num, 4);
+        ParticleManager.instance.hp.Play();
     }
     
     IEnumerator BecomeActive(Vector3 pos)

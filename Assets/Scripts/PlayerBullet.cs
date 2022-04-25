@@ -7,39 +7,55 @@ public class PlayerBullet : MonoBehaviour {
     public float speed;
     public float lifetime;
 
+    public BulletModify mod;
+
     private float lifeTimer;
     private PlayerWeapon type;
     private StoredValue intel;
-    private int activeScene;
+    private float speedUp;
 
     // Start is called before the first frame update
     void Start() {
         lifeTimer = 0f;
+        
     }
 
     // Update is called once per frame
     void Update() {
-        if (ScenePause.instance.activeScene == activeScene) {
-            lifeTimer += Time.deltaTime;
-            if (lifeTimer > lifetime) {
-                gameObject.SetActive(false);
-            }
-
-            //Debug.Log(transform.right + " " + transform.right * speed);
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
+        lifeTimer += Time.deltaTime;
+        if (lifeTimer > lifetime) {
+            gameObject.SetActive(false);
         }
 
+        speedUp += mod.speedUp * Time.deltaTime;
+        transform.eulerAngles += Vector3.forward * mod.angleUp * Time.deltaTime;
+
+        transform.Translate(Vector3.right * (speed + speedUp) * Time.deltaTime);
     }
 
-    public void SetUp(StoredValue val, PlayerWeapon bullet, int scene) {
+    public void SetUp(StoredValue val, PlayerWeapon bullet) {
         UtilFunctions.GrowObject(gameObject);
 
         intel = val;
         lifeTimer = 0f;
         type = bullet;
-        activeScene = scene;
+
+        speedUp = 0;
+
+        if (mod.randomAngle)
+        {
+            mod.angleUp = Random.Range(-mod.angleRange, mod.angleRange);
+        }
     }
 
+    private void CheckGotLaser(float val)
+    {
+        if (intel.value >= 500 && intel.value - val < 500)
+        {
+            ParticleManager.instance.Toggle(ParticleManager.instance.intel, true);
+            SoundManager.instance.laserGet.Play();
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Enemy")) {
@@ -47,10 +63,12 @@ public class PlayerBullet : MonoBehaviour {
                 case PlayerWeapon.Intel:
                     if (intel)
                         intel.value += 2f;
+                    CheckGotLaser(2f);
                     break;
                 case PlayerWeapon.Damage:
                     if (intel)
                         intel.value += 20f;
+                    CheckGotLaser(20f);
                     collision.gameObject.GetComponent<BossShoot>().Damage(5);
                     break;
                 case PlayerWeapon.Weaken:
@@ -63,6 +81,7 @@ public class PlayerBullet : MonoBehaviour {
             gameObject.SetActive(false);
         } else if (collision.gameObject.CompareTag("InfEnemy")) {
             collision.gameObject.GetComponent<InfiltrationEnemyScript>().Damage();
+            gameObject.SetActive(false);
         } else if (collision.gameObject.CompareTag("Border")) {
             gameObject.SetActive(false);
         } else if (type == PlayerWeapon.Weaken && collision.gameObject.CompareTag("EnemyBullet")) {

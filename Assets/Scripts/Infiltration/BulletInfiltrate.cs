@@ -29,7 +29,6 @@ public class BulletInfiltrate : MonoBehaviour
         }
         else
         {
-            Debug.Log("Exist");
             instance = this;
         }
     }
@@ -117,6 +116,7 @@ public class BulletInfiltrate : MonoBehaviour
 
     public void EnterBullet(string sceneName)
     {
+        EvalutePattern.instance.StopAllPatterns();
         SpawnPortal(transform, false);
         ScenePause.instance.activeScene = 1;
         SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
@@ -152,6 +152,8 @@ public class BulletInfiltrate : MonoBehaviour
         }
         else if (boss.Final)
         {
+            player.Heal(4);
+            ParticleManager.instance.Toggle(ParticleManager.instance.stars, false);
             Debug.Log("You Win!");
         }
 
@@ -160,9 +162,22 @@ public class BulletInfiltrate : MonoBehaviour
 
     }
 
+    public IEnumerator Explosions()
+    {
+        boss.transform.DOShakePosition(5,10,10,90);
+        for (int i = 0; i < 20; i++)
+        {
+            SoundManager.instance.explosion.Play();
+            ParticleManager.instance.PlayParticle(ParticleManager.instance.explosion, boss.transform.position + UtilFunctions.Vec2ToVec3(UtilFunctions.RandVec2Range(Vector2.one * 5f)));
+            yield return new WaitForSeconds(0.25f);
+        }
+        boss.gameObject.SetActive(false);
+    }
+
     public void ExitBullet()
     {
         scaler.Scale(false);
+        EvalutePattern.instance.StopAllPatterns();
         StartCoroutine(MoveIn());
     }
 

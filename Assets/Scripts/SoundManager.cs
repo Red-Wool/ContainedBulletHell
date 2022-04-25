@@ -8,8 +8,10 @@ public class SoundManager : MonoBehaviour
 
     public AudioSource shoot;
     public AudioSource laser;
+    public AudioSource laserGet;
     public AudioSource graze;
     public AudioSource hurt;
+    public AudioSource explosion;
     public AudioSource infiltrateIn;
     public AudioSource infiltrateOut;
 
@@ -21,7 +23,6 @@ public class SoundManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Exist");
             instance = this;
         }
     }

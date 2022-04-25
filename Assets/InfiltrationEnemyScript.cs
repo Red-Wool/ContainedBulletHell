@@ -1,34 +1,45 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class InfiltrationEnemyScript : MonoBehaviour {
-    public float speed = 5;
-    public float bulletSpeed = 17;
-    public float bulletLifetime = 5;
-    public float bulletDelay = 0.8f;
-    public float hp = 10;
+    [SerializeField] private EnemyBulletSequence bullets;
+    [SerializeField] private EnemyMoveSequence move;
 
-    public GameObject bulletPrefab;
+    public float shootRate;
+    public float moveRate;
+    public int hp;
+    public bool look;
+
     private GameObject player;
-    private float bdc;
+    private float bdc = 0;
+    private float moveTimer = 0f;
 
     void Start() {
-        bdc = bulletDelay;
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = BulletInfiltrate.instance.player.gameObject;
     }
 
     void Update() {
-        bdc -= Time.deltaTime;
+
+        if (look)
+        {
+            Vector3 dir = player.transform.position - transform.position;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        }
+
+        bdc += Time.deltaTime;
+        moveTimer += Time.deltaTime;
 
         // check if it's time to spawn a new bullet
-        if (bdc <= 0) {
-            bdc = bulletDelay;
-            Vector3 bulletMovement = (player.transform.position - transform.position).normalized;
-            Vector3 offsetSpawnPoint = Vector3.MoveTowards(transform.position, player.transform.position, 3);
-
-            InfiltrateBulletScript b = Instantiate(bulletPrefab, offsetSpawnPoint, Quaternion.identity).GetComponent<InfiltrateBulletScript>();
-            b.SetUp((bulletMovement*bulletSpeed), bulletLifetime);
+        if (UtilFunctions.CheckTimer(ref bdc, shootRate))
+        {
+            EvalutePattern.instance.EvaluteBulletSequence(bullets, transform, player.transform, transform.parent);
+        }
+        if (UtilFunctions.CheckTimer(ref moveTimer, moveRate))
+        {
+            EvalutePattern.instance.EvaluteMoveSequence(transform, move);
         }
     }
 
@@ -36,6 +47,9 @@ public class InfiltrationEnemyScript : MonoBehaviour {
         hp--;
         if (hp <= 0) {
             // maybe we can add a cool effect here, or require the player to kill all the enemies before getting the star?
+            transform.DOKill();
+            SoundManager.instance.explosion.Play();
+            ParticleManager.instance.PlayParticle(ParticleManager.instance.explosion, transform.position);
             Destroy(gameObject);
         }
     }

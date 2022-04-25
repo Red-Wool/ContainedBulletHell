@@ -17,38 +17,42 @@ public class EvalutePattern : MonoBehaviour
         }
         else
         {
-            Debug.Log("Exist");
             instance = this;
         }
     }
 
-    public void EvaluteBulletPattern(EnemyBulletPattern pattern, Vector2 pos, float angle, float extraSpeed)
+    public void StopAllPatterns()
+    {
+        StopAllCoroutines();
+    }
+
+    public void EvaluteBulletPattern(EnemyBulletPattern pattern, Vector2 pos, float angle, float extraSpeed, Transform parent)
     {
         int key = pattern.key;
         for (int i = 0; i < pattern.bulletAngles.Length; i++)
         {
             GameObject obj = boss.BulletPools[key].GetObject();
-            obj.transform.parent = boss.Container.transform;
+            obj.transform.parent = parent;
 
             obj.transform.position = transform.position + new Vector3(pos.x, pos.y, 0f);
             obj.transform.rotation = Quaternion.Euler(Vector3.forward * (angle + pattern.bulletAngles[i]));
             EnemyBullet bullet = obj.GetComponent<EnemyBullet>();
 
-            bullet.SetUp(key, pattern.speed + extraSpeed, boss.ActiveScene);
+            bullet.SetUp(key, pattern.speed + extraSpeed, ScenePause.instance.activeScene);
         }
     }
 
-    public void EvaluteBulletSequence(EnemyBulletSequence sequence, Transform pos, Transform target)
+    public void EvaluteBulletSequence(EnemyBulletSequence sequence, Transform pos, Transform target, Transform parent)
     {
-        EvaluteBulletSequence(sequence, pos, target, new Vector2[] { Vector2.zero });
+        EvaluteBulletSequence(sequence, pos, target, new Vector2[] { Vector2.zero }, parent);
     }
 
-    public void EvaluteBulletSequence(EnemyBulletSequence sequence, Transform pos, Transform target, Vector2[] randPos)
+    public void EvaluteBulletSequence(EnemyBulletSequence sequence, Transform pos, Transform target, Vector2[] randPos, Transform parent)
     {
-        StartCoroutine(PlayBulletSequence(sequence, pos, target, randPos));
+        StartCoroutine(PlayBulletSequence(sequence, pos, target, randPos, parent));
     }
 
-    public IEnumerator PlayBulletSequence(EnemyBulletSequence sequence, Transform pos, Transform target, Vector2[] randPos)
+    public IEnumerator PlayBulletSequence(EnemyBulletSequence sequence, Transform pos, Transform target, Vector2[] randPos, Transform parent)
     {
         float angle, anglePlus = 0, speedPlus = 0;
         int r = Random.Range(0, randPos.Length);
@@ -56,13 +60,15 @@ public class EvalutePattern : MonoBehaviour
 
         for (int i = 0; i < sequence.loops; i++)
         {
+            if (!pos) { break; }
+
             spawn = randPos[r] + UtilFunctions.Vec3ToVec2(pos.position);
 
             angle = (sequence.aimAtPlayer) ? UtilFunctions.AngleTowards(spawn, target.position) : 0f;
 
             angle += Random.Range(-sequence.angleOffset, sequence.angleOffset) + anglePlus;
 
-            EvaluteBulletPattern(sequence.pattern, spawn, angle, speedPlus);
+            EvaluteBulletPattern(sequence.pattern, spawn, angle, speedPlus, parent);
             if (sequence.rate > 0f)
             {
                 yield return new WaitForSeconds(sequence.rate);

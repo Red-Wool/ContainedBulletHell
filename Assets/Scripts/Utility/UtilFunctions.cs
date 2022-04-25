@@ -23,6 +23,10 @@ public static class UtilFunctions
     {
         return new Vector2(pos.x, pos.y);
     }
+    public static Vector3 Vec2ToVec3(Vector2 pos)
+    {
+        return new Vector3(pos.x, pos.y);
+    }
 
     public static Vector2 RandVec2Range(Vector2 range)
     {

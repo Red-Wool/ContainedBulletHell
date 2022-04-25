@@ -74,7 +74,7 @@ public class BossShoot : MonoBehaviour
                 if (CheckTimer(curSequence.wait))
                 {
                     
-                    EvalutePattern.instance.EvaluteBulletSequence(curSequence, transform, player.transform, curSession.spawnPos);
+                    EvalutePattern.instance.EvaluteBulletSequence(curSequence, transform, player.transform, curSession.spawnPos, container.transform);
                     sequencePointer++;
                 }
             }
@@ -84,8 +84,9 @@ public class BossShoot : MonoBehaviour
     public void Damage(float damage)
     {
         bossHP.value -= damage;
-        if (bossHP.value <= 0)
+        if (!final && bossHP.value <= 0)
         {
+            ParticleManager.instance.Toggle(ParticleManager.instance.stars, true);
             final = true;
         }
     }
