@@ -154,7 +154,7 @@ public class BulletInfiltrate : MonoBehaviour
         {
             player.Heal(4);
             ParticleManager.instance.Toggle(ParticleManager.instance.stars, false);
-            Debug.Log("You Win!");
+            StartCoroutine(Explosions());
         }
 
         ScenePause.instance.activeScene = 0;
@@ -172,6 +172,7 @@ public class BulletInfiltrate : MonoBehaviour
             yield return new WaitForSeconds(0.25f);
         }
         boss.gameObject.SetActive(false);
+        Debug.Log("You Win!");
     }
 
     public void ExitBullet()
