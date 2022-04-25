@@ -30,6 +30,12 @@ public class BulletInfiltrate : MonoBehaviour {
         }
     }
 
+    /* instantly kill the boss cheats
+     * void Update() {
+     *     if (Input.GetKeyDown(KeyCode.U)) StartCoroutine(Explosions());
+     * }
+     */
+
     public void AddWeakenBullet(BulletWeaken[] weak) {
         weakBullets = new List<BulletWeaken>();
         foreach (BulletWeaken i in weak) {
@@ -149,15 +155,14 @@ public class BulletInfiltrate : MonoBehaviour {
         Debug.Log("You Win!");
 
         string[] sceneNames = new string[] { "TreeTank", "LighthouseGolem", "OvenFinale" };
-        int sceneIndex = Array.IndexOf(sceneNames, SceneManager.GetActiveScene());
+        int sceneIndex = Array.IndexOf(sceneNames, SceneManager.GetActiveScene().name);
         if (sceneIndex == -1) {
             Debug.Log("Scene not found :(");
         } else if (sceneIndex == sceneNames.Length - 1) {
             Debug.Log("Display win screen!");
         } else {
-            SceneManager.LoadScene(sceneNames[sceneIndex]);
+            SceneManager.LoadScene(sceneNames[sceneIndex+1]);
         }
-        SceneManager.LoadScene("MyScene");
     }
 
     public void ExitBullet() {
