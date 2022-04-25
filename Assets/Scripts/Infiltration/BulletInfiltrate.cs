@@ -30,11 +30,11 @@ public class BulletInfiltrate : MonoBehaviour {
         }
     }
 
-    /* instantly kill the boss cheats
-     * void Update() {
-     *     if (Input.GetKeyDown(KeyCode.U)) StartCoroutine(Explosions());
-     * }
-     */
+     //instantly kill the boss cheats
+     void Update() {
+          if (Input.GetKeyDown(KeyCode.U)) StartCoroutine(Explosions());
+     }
+     
 
     public void AddWeakenBullet(BulletWeaken[] weak) {
         weakBullets = new List<BulletWeaken>();
@@ -133,7 +133,7 @@ public class BulletInfiltrate : MonoBehaviour {
         if (boss.Phase2 && !boss.Final) {
             yield return new WaitForSeconds(4f);
         } else if (boss.Final) {
-            player.Heal(4);
+            player.Heal(8);
             ParticleManager.instance.Toggle(ParticleManager.instance.stars, false);
             StartCoroutine(Explosions());
         }
@@ -161,7 +161,7 @@ public class BulletInfiltrate : MonoBehaviour {
         if (sceneIndex == -1) {
             Debug.Log("Scene not found :(");
         } else if (sceneIndex == sceneNames.Length - 1) {
-            Debug.Log("Display win screen!");
+            SceneManager.LoadScene("WinScene");
         } else {
             SceneManager.LoadScene(sceneNames[sceneIndex+1]);
         }

@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9964975032e01a049a38547a2d410c9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  lifetime: 2
+  speed: 20
+  lifetime: 4
   mod:
     speedUp: 4
     randomAngle: 1

@@ -21,7 +21,7 @@ public class PlayerStatusBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hpBar.fillAmount = Mathf.Lerp(hpBar.fillAmount, hp.value / 4f, Time.deltaTime * speed);
+        hpBar.fillAmount = Mathf.Lerp(hpBar.fillAmount, hp.value / 8f, Time.deltaTime * speed);
         intelBar.fillAmount = Mathf.Lerp(intelBar.fillAmount, Mathf.Clamp(intel.value,0f,laserCost.LaserCost) / laserCost.LaserCost, Time.deltaTime * speed);
     }
 }

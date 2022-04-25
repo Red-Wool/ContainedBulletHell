@@ -39,6 +39,7 @@ public class BossHPBar : MonoBehaviour
 
     public IEnumerator BarChange()
     {
+        BulletInfiltrate.instance.player.Heal(8);
         savedPos += cam.gameObject.transform.position;
         for (int i = 0; i < displays.Length; i++)
         {

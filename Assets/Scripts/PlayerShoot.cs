@@ -117,12 +117,14 @@ public class PlayerShoot : MonoBehaviour
             }
             else if (collision.gameObject.CompareTag("Portal"))
             {
+                intel.value *= 0.25f;
                 BulletInfiltrate.instance.EnterBullet(collision.gameObject.GetComponent<InfiltratePortal>().scene);
                 SoundManager.instance.infiltrateIn.Play();
                 move.InfiltrateTransition(collision.gameObject.transform.position, true);
             }
             else if (collision.gameObject.CompareTag("Exit"))
             {
+                intel.value *= 0.25f;
                 collision.gameObject.SetActive(false);
                 BulletInfiltrate.instance.ExitBullet();
                 BulletInfiltrate.instance.Victory();

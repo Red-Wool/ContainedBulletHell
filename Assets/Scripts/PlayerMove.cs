@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         invincible = false;
-        hp.value = 4;
+        hp.value = 8;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -49,9 +50,28 @@ public class PlayerMove : MonoBehaviour
         if (shoot.canControl && !invincible)
         {
             hp.value -= damage;
-            SoundManager.instance.hurt.Play();
-            StartCoroutine(Invincible(3f));
+            if (hp.value <= 0)
+            {
+                StartCoroutine(Death());
+
+            }
+            else
+            {
+                SoundManager.instance.hurt.Play();
+                StartCoroutine(Invincible(3f));
+            }
         }
+    }
+
+    public IEnumerator Death()
+    {
+        SoundManager.instance.explosion.Play();
+        ParticleManager.instance.PlayParticle(ParticleManager.instance.explosion, transform.position);
+        shoot.canControl = false;
+        transform.localScale = Vector3.zero;
+        yield return new WaitForSeconds(2f);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public IEnumerator Invincible(float time)
@@ -87,7 +107,7 @@ public class PlayerMove : MonoBehaviour
 
     public void Heal(int num)
     {
-        hp.value = Mathf.Min(hp.value + num, 4);
+        hp.value = Mathf.Min(hp.value + num, 8);
         ParticleManager.instance.hp.Play();
     }
     
@@ -97,6 +117,8 @@ public class PlayerMove : MonoBehaviour
         //transform.localPosition = Vector3.zero;
         transform.DOScale(Vector3.one, 2f).SetEase(Ease.OutCubic);
         transform.DOMove(pos, 3f).SetEase(Ease.OutElastic);
+
+        Heal(2);
 
         if (BulletInfiltrate.instance.CheckGetAll() && !BulletInfiltrate.instance.boss.Final)
         {
