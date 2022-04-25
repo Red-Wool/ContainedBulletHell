@@ -6,8 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: 81dddf00493cda545966ce75176d0cd6
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 6218ccd882cfbf842b66fc5ea2fde22c
+  - enabled: 1
     path: Assets/Scenes/TreeTank.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/LighthouseGolem.unity
+    guid: 5bff3f42e90d81e42a7825193bf25807
+  - enabled: 1
+    path: Assets/Scenes/OvenFinale.unity
+    guid: f85d897f82e984b4ba5b4bd53057dfcd
   - enabled: 1
     path: Assets/Scenes/Infiltration/BlueSky.unity
     guid: 2c9bf4c033896d14489805b580aff40a
