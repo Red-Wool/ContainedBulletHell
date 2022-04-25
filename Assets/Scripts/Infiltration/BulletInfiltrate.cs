@@ -144,6 +144,8 @@ public class BulletInfiltrate : MonoBehaviour {
     }
 
     public IEnumerator Explosions() {
+
+        DOTween.KillAll();
         boss.transform.DOShakePosition(5, 10, 10, 90);
         for (int i = 0; i < 20; i++) {
             SoundManager.instance.explosion.Play();
@@ -154,7 +156,7 @@ public class BulletInfiltrate : MonoBehaviour {
 
         Debug.Log("You Win!");
 
-        string[] sceneNames = new string[] { "TreeTank", "LighthouseGolem", "OvenFinale" };
+        string[] sceneNames = new string[] {"Tutorial", "TreeTank", "LighthouseGolem", "OvenFinale" };
         int sceneIndex = Array.IndexOf(sceneNames, SceneManager.GetActiveScene().name);
         if (sceneIndex == -1) {
             Debug.Log("Scene not found :(");

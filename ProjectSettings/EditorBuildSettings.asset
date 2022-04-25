@@ -59,4 +59,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Infiltration/Ball.unity
     guid: 1dd4e16f6efa6b54289e5a73defe62c6
+  - enabled: 1
+    path: Assets/Scenes/Infiltration/TutorialInfiltrate.unity
+    guid: 49dbf8ab83ac82c4093aa6438a071075
   m_configObjects: {}

@@ -24,7 +24,7 @@ MonoBehaviour:
       loops: 1
       rate: 0
       wait: 0
-      aimAtPlayer: 0
+      aimAtPlayer: 1
       angleOffset: 0
       loopAngle: 0
       loopSpeed: 0
