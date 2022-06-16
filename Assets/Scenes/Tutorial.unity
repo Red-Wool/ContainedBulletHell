@@ -13287,6 +13287,8 @@ MonoBehaviour:
   - weakID: 0
     sceneName: Ball
     display: {fileID: 1738486325}
+    enterText: 
+    subText: 
   container: {fileID: 350654330}
   activeScene: 0
   player: {fileID: 973646309}
@@ -13717,8 +13719,9 @@ MonoBehaviour:
     Right Click - Weaken Laser (Requires
     Blue Bar)'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d71f0db9b1dda96459ab424f6441353f, type: 2}
+  m_sharedMaterial: {fileID: 8656717817999080262, guid: d71f0db9b1dda96459ab424f6441353f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13817,7 +13820,7 @@ PrefabInstance:
     - target: {fileID: 3529557426781757067, guid: a3d10cf51c02b274b82713aa335cc71f,
         type: 3}
       propertyPath: laserCost
-      value: 500
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 3529557426781757067, guid: a3d10cf51c02b274b82713aa335cc71f,
         type: 3}
@@ -34981,7 +34984,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0

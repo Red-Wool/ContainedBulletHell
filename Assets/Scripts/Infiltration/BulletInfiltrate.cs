@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
-using UnityEngine.SceneManagement;
 using System;
 
 public class BulletInfiltrate : MonoBehaviour {
@@ -76,7 +75,7 @@ public class BulletInfiltrate : MonoBehaviour {
     }
 
     public void ActivateBulletInfiltration(Transform obj, string sceneName) {
-        Debug.Log(sceneName + " Activated111!!");
+        //Debug.Log(sceneName + " Activated111!!");
         portal.GetComponent<InfiltratePortal>().scene = sceneName;
         SpawnPortal(obj, true);
     }
@@ -115,7 +114,7 @@ public class BulletInfiltrate : MonoBehaviour {
     public IEnumerator MoveAway() {
         container.transform.DOScale(Vector3.one * 10f, 5f);
         //container.transform.DOMove(Vector3.down * 100, 5f).SetEase(Ease.OutExpo);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2.5f);
         player.InfiltrateTransition(lastPos, false);
         SoundManager.instance.infiltrateOut.Play();
         container.transform.position = Vector3.down * 100000;
@@ -134,6 +133,7 @@ public class BulletInfiltrate : MonoBehaviour {
             yield return new WaitForSeconds(4f);
         } else if (boss.Final) {
             player.Heal(8);
+            
             ParticleManager.instance.Toggle(ParticleManager.instance.stars, false);
             StartCoroutine(Explosions());
         }
@@ -144,18 +144,17 @@ public class BulletInfiltrate : MonoBehaviour {
     }
 
     public IEnumerator Explosions() {
-
         DOTween.KillAll();
         boss.transform.DOShakePosition(5, 10, 10, 90);
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 30; i++) {
             SoundManager.instance.explosion.Play();
             ParticleManager.instance.PlayParticle(ParticleManager.instance.explosion, boss.transform.position + UtilFunctions.Vec2ToVec3(UtilFunctions.RandVec2Range(Vector2.one * 5f)));
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.15f);
         }
         boss.gameObject.SetActive(false);
 
-        Debug.Log("You Win!");
-
+        //Double Kill all just in case!
+        DOTween.KillAll();
         string[] sceneNames = new string[] {"Tutorial", "TreeTank", "LighthouseGolem", "OvenFinale" };
         int sceneIndex = Array.IndexOf(sceneNames, SceneManager.GetActiveScene().name);
         if (sceneIndex == -1) {

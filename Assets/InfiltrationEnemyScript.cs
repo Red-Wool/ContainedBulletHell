@@ -50,7 +50,7 @@ public class InfiltrationEnemyScript : MonoBehaviour {
             transform.DOKill();
             SoundManager.instance.explosion.Play();
             ParticleManager.instance.PlayParticle(ParticleManager.instance.explosion, transform.position);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

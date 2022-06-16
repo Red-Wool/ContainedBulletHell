@@ -6,9 +6,14 @@ public class ParticleManager : MonoBehaviour
 {
     public static ParticleManager instance { get; private set; }
 
+    //Why did I do it like this
     public ParticleSystem intel;
     public ParticleSystem hp;
     public ParticleSystem shoot;
+    public ParticleSystem shootHit;
+    public ParticleSystem damageHit;
+    public ParticleSystem weakenHit;
+    public ParticleSystem recieveNew;
     public ParticleSystem explosion;
     public ParticleSystem stars;
     public ParticleSystem infiltrateEnter;
@@ -22,7 +27,6 @@ public class ParticleManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Exist");
             instance = this;
         }
     }

@@ -567,12 +567,12 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: move.pattern.pos.Array.data[0].x
-      value: -20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: move.pattern.pos.Array.data[0].y
-      value: 60
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}

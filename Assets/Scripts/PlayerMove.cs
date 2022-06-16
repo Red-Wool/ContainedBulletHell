@@ -120,10 +120,12 @@ public class PlayerMove : MonoBehaviour
 
         Heal(2);
 
+        
         if (BulletInfiltrate.instance.CheckGetAll() && !BulletInfiltrate.instance.boss.Final)
         {
             shoot.Second();
             yield return new WaitForSeconds(4f);
+            ParticleManager.instance.PlayParticle(ParticleManager.instance.recieveNew, transform.position);
         }
         yield return new WaitForSeconds(3f);
         

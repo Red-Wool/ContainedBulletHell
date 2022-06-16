@@ -63,6 +63,7 @@ public class PlayerBullet : MonoBehaviour {
                 case PlayerWeapon.Intel:
                     if (intel)
                         intel.value += 2f;
+                    ParticleManager.instance.PlayParticle(ParticleManager.instance.shootHit, Vector3.Lerp(transform.position, collision.gameObject.transform.position,.2f));
                     CheckGotLaser(2f);
                     break;
                 case PlayerWeapon.Damage:
@@ -70,22 +71,25 @@ public class PlayerBullet : MonoBehaviour {
                         intel.value += 20f;
                     CheckGotLaser(20f);
                     collision.gameObject.GetComponent<BossShoot>().Damage(5);
+                    ParticleManager.instance.PlayParticle(ParticleManager.instance.damageHit, Vector3.Lerp(transform.position, collision.gameObject.transform.position, .1f));
                     break;
                 case PlayerWeapon.Weaken:
                     if (collision.GetComponent<BossShoot>().Final) {
+                        ParticleManager.instance.PlayParticle(ParticleManager.instance.weakenHit, collision.gameObject.transform.position);
                         BulletInfiltrate.instance.BossPortal();
                     }
                     break;
             }
-
             gameObject.SetActive(false);
         } else if (collision.gameObject.CompareTag("InfEnemy")) {
             collision.gameObject.GetComponent<InfiltrationEnemyScript>().Damage();
+            ParticleManager.instance.PlayParticle(ParticleManager.instance.damageHit, Vector3.Lerp(transform.position, collision.gameObject.transform.position, .2f));
             gameObject.SetActive(false);
         } else if (collision.gameObject.CompareTag("Border")) {
             gameObject.SetActive(false);
         } else if (type == PlayerWeapon.Weaken && collision.gameObject.CompareTag("EnemyBullet")) {
             collision.gameObject.GetComponent<EnemyBullet>().Weaken();
+            ParticleManager.instance.PlayParticle(ParticleManager.instance.weakenHit, Vector3.Lerp(transform.position, collision.gameObject.transform.position, .8f));
             gameObject.SetActive(false);
         }
     }

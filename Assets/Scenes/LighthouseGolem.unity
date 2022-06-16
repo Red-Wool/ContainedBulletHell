@@ -18963,7 +18963,7 @@ PrefabInstance:
     - target: {fileID: 3529557426781757067, guid: a3d10cf51c02b274b82713aa335cc71f,
         type: 3}
       propertyPath: laserCost
-      value: 500
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 3529557426781757067, guid: a3d10cf51c02b274b82713aa335cc71f,
         type: 3}
@@ -18978,7 +18978,7 @@ PrefabInstance:
     - target: {fileID: 3529557426781757067, guid: a3d10cf51c02b274b82713aa335cc71f,
         type: 3}
       propertyPath: upgradeShot.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3529557426781757067, guid: a3d10cf51c02b274b82713aa335cc71f,
         type: 3}
@@ -19011,7 +19011,18 @@ PrefabInstance:
         type: 3}
       propertyPath: upgradeShot.Array.data[1].poolObject
       value: 
-      objectReference: {fileID: 1735257466269410355, guid: df3cf51d7b38c8448a9513fb34735be2,
+      objectReference: {fileID: 151504820741875357, guid: 6bd1c2ece070155449cc1d970a9aa986,
+        type: 3}
+    - target: {fileID: 3529557426781757067, guid: a3d10cf51c02b274b82713aa335cc71f,
+        type: 3}
+      propertyPath: upgradeShot.Array.data[2].initAmount
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529557426781757067, guid: a3d10cf51c02b274b82713aa335cc71f,
+        type: 3}
+      propertyPath: upgradeShot.Array.data[2].poolObject
+      value: 
+      objectReference: {fileID: 151504820741875357, guid: 6bd1c2ece070155449cc1d970a9aa986,
         type: 3}
     - target: {fileID: 3529557426781757110, guid: a3d10cf51c02b274b82713aa335cc71f,
         type: 3}
@@ -19220,7 +19231,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b84a358fbe1dc05498ca897985cd8c8d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ed2425d6f1fad534fb21ca1313c4e835, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24177,7 +24188,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0

@@ -28,7 +28,7 @@ MonoBehaviour:
       angleOffset: 0
       loopAngle: 0
       loopSpeed: 5
-    nextSessions: 0000000001000000
+    nextSessions: 00000000010000000200000003000000
     coolDown: 1
     spawnPos:
     - {x: 4, y: 3}
@@ -49,6 +49,60 @@ MonoBehaviour:
       loopSpeed: -3
     nextSessions: 00000000
     coolDown: 0.4
+    spawnPos:
+    - {x: 4, y: 3}
+    - {x: 0, y: 2}
+    - {x: -3, y: 3}
+  - sequence:
+    - pattern:
+        bulletAngles:
+        - -40
+        speed: 18
+        key: 0
+      loops: 5
+      rate: 0.1
+      wait: 0
+      aimAtPlayer: 1
+      angleOffset: 0
+      loopAngle: 20
+      loopSpeed: 0
+    nextSessions: 0000000001000000
+    coolDown: 1.2
+    spawnPos:
+    - {x: 4, y: 3}
+    - {x: 0, y: 2}
+    - {x: -3, y: 3}
+  - sequence:
+    - pattern:
+        bulletAngles:
+        - 8
+        - 4
+        - 0
+        - -8
+        - -4
+        speed: 11
+        key: 0
+      loops: 1
+      rate: 0.1
+      wait: 0
+      aimAtPlayer: 1
+      angleOffset: 0
+      loopAngle: 0
+      loopSpeed: 0
+    - pattern:
+        bulletAngles:
+        - 0
+        speed: 15
+        key: 1
+      loops: 1
+      rate: 0.1
+      wait: 0
+      aimAtPlayer: 1
+      angleOffset: 0
+      loopAngle: 0
+      loopSpeed: -3
+    nextSessions: 0000000001000000
+    coolDown: 1
     spawnPos:
     - {x: 4, y: 3}
     - {x: 0, y: 2}

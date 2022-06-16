@@ -167,4 +167,6 @@ public class BulletWeaken
     public int weakID;
     public string sceneName;
     public GameObject display;
+    public string enterText;
+    public string subText;
 }
