@@ -28,6 +28,25 @@ MonoBehaviour:
       angleOffset: 0
       loopAngle: 0
       loopSpeed: 0
+    nextSessions: 0000000001000000
+    coolDown: 1.5
+    spawnPos:
+    - {x: 0, y: 0}
+  - sequence:
+    - pattern:
+        bulletAngles:
+        - 120
+        - 240
+        - 0
+        speed: 15
+        key: 0
+      loops: 6
+      rate: 0.3
+      wait: 0
+      aimAtPlayer: 0
+      angleOffset: 0
+      loopAngle: 73
+      loopSpeed: 0
     nextSessions: 00000000
     coolDown: 1.5
     spawnPos:

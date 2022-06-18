@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InfiltratePortal : MonoBehaviour
 {
-    public string scene;
+    public BulletWeaken scene;
 
     private void Update()
     {

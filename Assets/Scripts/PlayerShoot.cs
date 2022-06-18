@@ -103,13 +103,23 @@ public class PlayerShoot : MonoBehaviour
 
     }
 
+    private void AddIntel(float val)
+    {
+        intel.value += val;
+        if (intel.value >= laserCost && intel.value - val < laserCost)
+        {
+            ParticleManager.instance.Toggle(ParticleManager.instance.intel, true);
+            SoundManager.instance.laserGet.Play();
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (canControl)
         {
             if (collision.gameObject.CompareTag("EnemyBullet"))
             {
-                intel.value += 6;
+                AddIntel(5);
                 SoundManager.instance.graze.Play();
 
                 UtilFunctions.PulseObject(graze, 0.2f, 0.5f, 0f, 1);

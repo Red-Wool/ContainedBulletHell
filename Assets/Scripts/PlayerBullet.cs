@@ -50,7 +50,7 @@ public class PlayerBullet : MonoBehaviour {
 
     private void CheckGotLaser(float val)
     {
-        if (intel.value >= 500 && intel.value - val < 500)
+        if (intel.value >= 350 && intel.value - val < 350)
         {
             ParticleManager.instance.Toggle(ParticleManager.instance.intel, true);
             SoundManager.instance.laserGet.Play();

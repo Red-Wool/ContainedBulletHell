@@ -14,7 +14,7 @@ public class BossShoot : MonoBehaviour
     private int sequencePointer;
     private bool second; public bool Phase2 { get { return second; } }
     private bool final; public bool Final { get { return final; } }
-    public string finalScene;
+    public BulletWeaken finalScene;
 
     private float timer;
 
@@ -168,5 +168,6 @@ public class BulletWeaken
     public string sceneName;
     public GameObject display;
     public string enterText;
+    [TextArea]
     public string subText;
 }

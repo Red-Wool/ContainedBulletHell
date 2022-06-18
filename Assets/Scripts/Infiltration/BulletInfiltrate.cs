@@ -10,13 +10,14 @@ public class BulletInfiltrate : MonoBehaviour {
 
     public PlayerMove player;
     public BossShoot boss;
+    public QuipDisplay quip;
     public GameObject portal;
     public GameObject container;
 
     public BossHPBar bossBar;
 
     private List<BulletWeaken> weakBullets;
-    private string bulletSceneName;
+    private BulletWeaken bulletSceneName;
     public Vector3 lastPos { get; private set; }
 
     [HideInInspector] public InfiltrateStart scaler;
@@ -53,7 +54,7 @@ public class BulletInfiltrate : MonoBehaviour {
 
     public void Victory() {
         for (int i = 0; i < weakBullets.Count; i++) {
-            if (weakBullets[i].sceneName == bulletSceneName) {
+            if (weakBullets[i].sceneName == bulletSceneName.sceneName) {
                 weakBullets[i].display.transform.DOScale(Vector3.zero, 1f).SetEase(Ease.OutCubic);
                 weakBullets.Remove(weakBullets[i]);
             }
@@ -63,7 +64,7 @@ public class BulletInfiltrate : MonoBehaviour {
     public bool CheckBullet(Transform obj, int id) {
         for (int i = 0; i < weakBullets.Count; i++) {
             if (id == weakBullets[i].weakID) {
-                ActivateBulletInfiltration(obj, weakBullets[i].sceneName);
+                ActivateBulletInfiltration(obj, weakBullets[i]);
                 return true;
             }
         }
@@ -74,7 +75,7 @@ public class BulletInfiltrate : MonoBehaviour {
         ActivateBulletInfiltration(boss.transform, boss.finalScene);
     }
 
-    public void ActivateBulletInfiltration(Transform obj, string sceneName) {
+    public void ActivateBulletInfiltration(Transform obj, BulletWeaken sceneName) {
         //Debug.Log(sceneName + " Activated111!!");
         portal.GetComponent<InfiltratePortal>().scene = sceneName;
         SpawnPortal(obj, true);
@@ -100,24 +101,30 @@ public class BulletInfiltrate : MonoBehaviour {
         }
     }
 
-    public void EnterBullet(string sceneName) {
+    public void EnterBullet(BulletWeaken sceneName) {
         EvalutePattern.instance.StopAllPatterns();
         SpawnPortal(transform, false);
         ScenePause.instance.activeScene = 1;
-        SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
-
-        StartCoroutine(MoveAway());
+        SceneManager.LoadSceneAsync(sceneName.sceneName, LoadSceneMode.Additive);
 
         bulletSceneName = sceneName;
+
+        StartCoroutine(MoveAway());
     }
 
     public IEnumerator MoveAway() {
         container.transform.DOScale(Vector3.one * 10f, 5f);
         //container.transform.DOMove(Vector3.down * 100, 5f).SetEase(Ease.OutExpo);
+        
         yield return new WaitForSeconds(2.5f);
+
         player.InfiltrateTransition(lastPos, false);
         SoundManager.instance.infiltrateOut.Play();
         container.transform.position = Vector3.down * 100000;
+
+        yield return new WaitForSeconds(3f);
+
+        quip.DisplayQuip(bulletSceneName.enterText, bulletSceneName.subText);
     }
 
     public IEnumerator MoveIn() {
