@@ -118,13 +118,13 @@ MonoBehaviour:
       loopSpeed: 5
     - pattern:
         bulletAngles:
-        - 180
+        - 0
         speed: 30
         key: 1
       loops: 3
       rate: 0
       wait: 0.15
-      aimAtPlayer: 0
+      aimAtPlayer: 1
       angleOffset: 5
       loopAngle: 0
       loopSpeed: 5
@@ -818,6 +818,20 @@ MonoBehaviour:
   - sequence:
     - pattern:
         bulletAngles:
+        - 0
+        - 15
+        - -15
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 1
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
         - 180
         - 195
         - 165
@@ -827,6 +841,426 @@ MonoBehaviour:
       rate: 0.2
       wait: 0.5
       aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 0
+        - 15
+        - -15
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 1
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 0
+        - 15
+        - -15
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 1
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 0
+        - 15
+        - -15
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 1
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 0
+        - 15
+        - -15
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 1
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 0
+        - 15
+        - -15
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 1
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 0
+        - 15
+        - -15
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 1
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 0
+        - 15
+        - -15
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 1
       angleOffset: 30
       loopAngle: 0
       loopSpeed: 0.5
@@ -958,6 +1392,20 @@ MonoBehaviour:
       loopSpeed: 0.5
     - pattern:
         bulletAngles:
+        - 0
+        - 15
+        - -15
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 1
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
         - 180
         - 195
         - 165
@@ -967,6 +1415,118 @@ MonoBehaviour:
       rate: 0.2
       wait: 0.5
       aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 0
+        - 15
+        - -15
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 1
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 0
+        - 15
+        - -15
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 1
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 180
+        - 195
+        - 165
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 0
+      angleOffset: 30
+      loopAngle: 0
+      loopSpeed: 0.5
+    - pattern:
+        bulletAngles:
+        - 0
+        - 15
+        - -15
+        speed: 15
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0.5
+      aimAtPlayer: 1
       angleOffset: 30
       loopAngle: 0
       loopSpeed: 0.5
@@ -1056,15 +1616,15 @@ MonoBehaviour:
       loopSpeed: 0.5
     - pattern:
         bulletAngles:
-        - 180
-        - 195
-        - 165
+        - 0
+        - 15
+        - -15
         speed: 15
         key: 0
       loops: 5
       rate: 0.2
       wait: 0.5
-      aimAtPlayer: 0
+      aimAtPlayer: 1
       angleOffset: 30
       loopAngle: 0
       loopSpeed: 0.5
@@ -1084,575 +1644,15 @@ MonoBehaviour:
       loopSpeed: 0.5
     - pattern:
         bulletAngles:
-        - 180
-        - 195
-        - 165
+        - 0
+        - 15
+        - -15
         speed: 15
         key: 0
       loops: 5
       rate: 0.2
       wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
-      angleOffset: 30
-      loopAngle: 0
-      loopSpeed: 0.5
-    - pattern:
-        bulletAngles:
-        - 180
-        - 195
-        - 165
-        speed: 15
-        key: 0
-      loops: 5
-      rate: 0.2
-      wait: 0.5
-      aimAtPlayer: 0
+      aimAtPlayer: 1
       angleOffset: 30
       loopAngle: 0
       loopSpeed: 0.5

@@ -193,6 +193,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Infiltration Enemy (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2359003958984967286, guid: e4a139f5bc9975f40820a437e9f06e1b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2359003959095822872, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: m_RootOrder
@@ -64610,6 +64615,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Infiltration Enemy (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 2359003958984967286, guid: e4a139f5bc9975f40820a437e9f06e1b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2359003959095822872, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: m_RootOrder
@@ -64892,6 +64902,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Infiltration Enemy (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2359003958984967286, guid: e4a139f5bc9975f40820a437e9f06e1b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2359003959095822872, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: m_RootOrder
@@ -65032,6 +65047,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Infiltration Enemy (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359003958984967286, guid: e4a139f5bc9975f40820a437e9f06e1b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2359003959095822872, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -65314,6 +65334,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Infiltration Enemy (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359003958984967286, guid: e4a139f5bc9975f40820a437e9f06e1b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2359003959095822872, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -66128,6 +66153,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Infiltration Enemy (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359003958984967286, guid: e4a139f5bc9975f40820a437e9f06e1b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2359003959095822872, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}

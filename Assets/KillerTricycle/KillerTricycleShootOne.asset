@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3af785f22f6620e4eb411e606e483813, type: 3}
+  m_Name: KillerTricycleShootOne
+  m_EditorClassIdentifier: 
+  session:
+  - sequence:
+    - pattern:
+        bulletAngles:
+        - 0
+        speed: 5
+        key: 0
+      loops: 2
+      rate: 0.1
+      wait: 0
+      aimAtPlayer: 1
+      angleOffset: 180
+      loopAngle: 0
+      loopSpeed: 2
+    nextSessions: 000000000100000002000000
+    coolDown: 4
+    spawnPos:
+    - {x: 0, y: 0}
+  - sequence:
+    - pattern:
+        bulletAngles:
+        - 0
+        - 120
+        - 240
+        speed: 35
+        key: 1
+      loops: 200
+      rate: 0.1
+      wait: 0
+      aimAtPlayer: 0
+      angleOffset: 0
+      loopAngle: 2
+      loopSpeed: 0
+    nextSessions: 00000000
+    coolDown: 5
+    spawnPos:
+    - {x: 0, y: 0}
+  - sequence:
+    - pattern:
+        bulletAngles:
+        - 0
+        - 120
+        - 240
+        speed: 20
+        key: 2
+      loops: 10
+      rate: 0.1
+      wait: 0
+      aimAtPlayer: 1
+      angleOffset: 20
+      loopAngle: 0
+      loopSpeed: 1
+    nextSessions: 00000000
+    coolDown: 5
+    spawnPos:
+    - {x: 0, y: 0}

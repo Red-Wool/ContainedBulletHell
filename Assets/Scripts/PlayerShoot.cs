@@ -5,6 +5,9 @@ using DG.Tweening;
 
 public class PlayerShoot : MonoBehaviour
 {
+    private KeyCode shoot;
+    private KeyCode weakenLaser;
+
     [SerializeField] private ObjectPool normalShoot;
     [SerializeField] private ObjectPool weakLaser;
 
@@ -24,8 +27,13 @@ public class PlayerShoot : MonoBehaviour
 
     [SerializeField] private PlayerMove move;
 
-    // Start is called before the first frame update
-    void Start()
+    private void SetControl(ControlList controls)
+    {
+        shoot = controls.GetControl("Shoot");
+        weakenLaser = controls.GetControl("WeakenLaser");
+    }
+
+    private void Awake()
     {
         cam = Camera.main;
 
@@ -41,6 +49,14 @@ public class PlayerShoot : MonoBehaviour
         shootRate = normalShootRate;
 
         intel.value = 0f;
+
+        OptionMenu.ChangeControls += SetControl;
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
     }
 
     // Update is called once per frame
@@ -113,6 +129,12 @@ public class PlayerShoot : MonoBehaviour
         }
     }
 
+    private void RemoveExcessIntel()
+    {
+        intel.value = Mathf.Clamp(intel.value, 0f, 350f) * 0.35f;
+        ParticleManager.instance.Toggle(ParticleManager.instance.intel, false);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (canControl)
@@ -127,14 +149,14 @@ public class PlayerShoot : MonoBehaviour
             }
             else if (collision.gameObject.CompareTag("Portal"))
             {
-                intel.value *= 0.25f;
+                RemoveExcessIntel();
                 BulletInfiltrate.instance.EnterBullet(collision.gameObject.GetComponent<InfiltratePortal>().scene);
                 SoundManager.instance.infiltrateIn.Play();
                 move.InfiltrateTransition(collision.gameObject.transform.position, true);
             }
             else if (collision.gameObject.CompareTag("Exit"))
             {
-                intel.value *= 0.25f;
+                RemoveExcessIntel();
                 collision.gameObject.SetActive(false);
                 BulletInfiltrate.instance.ExitBullet();
                 BulletInfiltrate.instance.Victory();

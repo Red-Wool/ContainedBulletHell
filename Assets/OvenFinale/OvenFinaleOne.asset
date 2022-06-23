@@ -225,12 +225,28 @@ MonoBehaviour:
   - sequence:
     - pattern:
         bulletAngles:
+        - 0
+        - 10
+        - 20
+        - -20
+        - -10
+        speed: 10
+        key: 0
+      loops: 5
+      rate: 0.2
+      wait: 0
+      aimAtPlayer: 1
+      angleOffset: 10
+      loopAngle: 0
+      loopSpeed: -1
+    - pattern:
+        bulletAngles:
         - 180
         speed: 50
         key: 1
       loops: 50
       rate: 0.1
-      wait: 0
+      wait: 1.5
       aimAtPlayer: 0
       angleOffset: 0
       loopAngle: 0

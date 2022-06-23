@@ -43,7 +43,7 @@ public class InfiltrationEnemyScript : MonoBehaviour {
         }
     }
 
-    public void Damage() {
+    public bool Damage() {
         hp--;
         if (hp <= 0) {
             // maybe we can add a cool effect here, or require the player to kill all the enemies before getting the star?
@@ -51,6 +51,8 @@ public class InfiltrationEnemyScript : MonoBehaviour {
             SoundManager.instance.explosion.Play();
             ParticleManager.instance.PlayParticle(ParticleManager.instance.explosion, transform.position);
             gameObject.SetActive(false);
+            return true;
         }
+        return false;
     }
 }

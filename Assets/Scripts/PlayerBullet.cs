@@ -82,7 +82,11 @@ public class PlayerBullet : MonoBehaviour {
             }
             gameObject.SetActive(false);
         } else if (collision.gameObject.CompareTag("InfEnemy")) {
-            collision.gameObject.GetComponent<InfiltrationEnemyScript>().Damage();
+            if (collision.gameObject.GetComponent<InfiltrationEnemyScript>().Damage())
+            {
+                intel.value += 50f;
+                CheckGotLaser(50f);
+            }
             ParticleManager.instance.PlayParticle(ParticleManager.instance.damageHit, Vector3.Lerp(transform.position, collision.gameObject.transform.position, .2f));
             gameObject.SetActive(false);
         } else if (collision.gameObject.CompareTag("Border")) {

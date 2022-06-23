@@ -62,6 +62,10 @@ public class BulletInfiltrate : MonoBehaviour {
     }
 
     public bool CheckBullet(Transform obj, int id) {
+        if (ScenePause.instance.activeScene == 1)
+        {
+            return false;
+        }
         for (int i = 0; i < weakBullets.Count; i++) {
             if (id == weakBullets[i].weakID) {
                 ActivateBulletInfiltration(obj, weakBullets[i]);

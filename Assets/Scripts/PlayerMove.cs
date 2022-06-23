@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
+    private KeyCode moveLeft;
+    private KeyCode moveRight;
+    private KeyCode moveUp;
+    private KeyCode moveDown;
+
     [SerializeField] private float speed;
     [SerializeField] private StoredValue hp;
 
@@ -16,12 +21,26 @@ public class PlayerMove : MonoBehaviour
 
     private Rigidbody2D rb;
 
-    // Start is called before the first frame update
-    void Start()
+    private void SetControl(ControlList controls)
+    {
+        moveLeft = controls.GetControl("MoveLeft");
+        moveRight = controls.GetControl("MoveRight");
+        moveUp = controls.GetControl("MoveUp");
+        moveDown = controls.GetControl("MoveDown");
+    }
+    private void Awake()
     {
         invincible = false;
         hp.value = 8;
         rb = GetComponent<Rigidbody2D>();
+
+        OptionMenu.ChangeControls += SetControl;
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
     }
 
     // Update is called once per frame
