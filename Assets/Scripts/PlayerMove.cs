@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
-    private KeyCode moveLeft;
-    private KeyCode moveRight;
-    private KeyCode moveUp;
-    private KeyCode moveDown;
+    private KeyCode moveLeft = KeyCode.A;
+    private KeyCode moveRight = KeyCode.D;
+    private KeyCode moveUp = KeyCode.W;
+    private KeyCode moveDown = KeyCode.S;
+    private KeyCode slowMove = KeyCode.LeftShift;
 
     [SerializeField] private float speed;
     [SerializeField] private StoredValue hp;
@@ -27,6 +28,7 @@ public class PlayerMove : MonoBehaviour
         moveRight = controls.GetControl("MoveRight");
         moveUp = controls.GetControl("MoveUp");
         moveDown = controls.GetControl("MoveDown");
+        slowMove = controls.GetControl("SlowMove");
     }
     private void Awake()
     {
@@ -43,15 +45,20 @@ public class PlayerMove : MonoBehaviour
         
     }
 
+    private int CheckInput(KeyCode key)
+    {
+        return Input.GetKey(key) ? 1 : 0;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
+        float x = CheckInput(moveRight) - CheckInput(moveLeft);//Input.GetAxisRaw("Horizontal");
+        float y = CheckInput(moveUp) - CheckInput(moveDown);//Input.GetAxisRaw("Vertical");
 
         Vector2 move = new Vector2(x, y).normalized;
 
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        if (Input.GetKey(slowMove))
         {
             move *= 0.5f;
         }

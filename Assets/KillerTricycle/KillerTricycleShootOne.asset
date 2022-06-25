@@ -17,12 +17,17 @@ MonoBehaviour:
     - pattern:
         bulletAngles:
         - 0
+        - 60
+        - 120
+        - 180
+        - 240
+        - 300
         speed: 5
         key: 0
       loops: 2
       rate: 0.1
       wait: 0
-      aimAtPlayer: 1
+      aimAtPlayer: 0
       angleOffset: 180
       loopAngle: 0
       loopSpeed: 2

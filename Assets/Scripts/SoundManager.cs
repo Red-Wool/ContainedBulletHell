@@ -6,6 +6,7 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance { get; private set; }
 
+    public AudioSource music;
     public AudioSource shoot;
     public AudioSource laser;
     public AudioSource laserGet;
@@ -27,15 +28,33 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void PauseMusic(bool flag)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        //very unelegant but idk how to do other way for now
+        if (flag)
+        {
+            music.Pause();
+            shoot.Pause();
+            laser.Pause();
+            laserGet.Pause();
+            graze.Pause();
+            hurt.Pause();
+            explosion.Pause();
+            infiltrateIn.Pause();
+            infiltrateOut.Pause();
+        }
+        else
+        {
+            music.UnPause();
+            shoot.UnPause();
+            laser.UnPause();
+            laserGet.UnPause();
+            graze.UnPause();
+            hurt.UnPause();
+            explosion.UnPause();
+            infiltrateIn.UnPause();
+            infiltrateOut.UnPause();
+        }
         
     }
 }

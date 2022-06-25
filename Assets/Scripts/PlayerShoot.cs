@@ -5,8 +5,8 @@ using DG.Tweening;
 
 public class PlayerShoot : MonoBehaviour
 {
-    private KeyCode shoot;
-    private KeyCode weakenLaser;
+    private KeyCode shoot = KeyCode.Mouse0;
+    private KeyCode weakenLaser = KeyCode.Mouse1;
 
     [SerializeField] private ObjectPool normalShoot;
     [SerializeField] private ObjectPool weakLaser;
@@ -74,7 +74,7 @@ public class PlayerShoot : MonoBehaviour
             rateTimer += Time.deltaTime;
 
 
-            if (Input.GetMouseButton(0) && rateTimer > shootRate)
+            if (Input.GetKey(shoot) && rateTimer > shootRate)
             {
                 ParticleManager.instance.shoot.Play();
                 if (second)
@@ -91,7 +91,7 @@ public class PlayerShoot : MonoBehaviour
                 
                 SoundManager.instance.shoot.Play();
             }
-            else if (Input.GetMouseButtonDown(1) && laserCost <= intel.value)
+            else if (Input.GetKeyDown(weakenLaser) && laserCost <= intel.value)
             {
                 intel.value = 0f;
                 Shoot(weakLaser.GetObject(), angle, PlayerWeapon.Weaken);

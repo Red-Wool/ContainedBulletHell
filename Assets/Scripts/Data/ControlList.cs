@@ -7,18 +7,23 @@ public class ControlList : ScriptableObject
 {
     [SerializeField] private DefaultControl[] controls;
 
-    public KeyCode GetControl(string id)
+    private DefaultControl Find(string id)
     {
         for (int i = 0; i < controls.Length; i++)
         {
             if (controls[i].name == id)
             {
-                return controls[i].key;
+                return controls[i];
             }
         }
 
-        Debug.LogError("Tried to get Nonvalid KeyCode! " + id);
-        return KeyCode.Alpha0;
+        Debug.LogError("Nonvalid Control! " + id);
+        return controls[0];
+    }
+
+    public KeyCode GetControl(string id)
+    {
+        return Find(id).key;
     }
 
     public void SetControl(string id, KeyCode newKey)
@@ -31,7 +36,18 @@ public class ControlList : ScriptableObject
                 return;
             }
         }
-        Debug.LogError("Tried to set Nonvalid KeyCode! " + id);
+    }
+
+    public void ResetControl(string id)
+    {
+        for (int i = 0; i < controls.Length; i++)
+        {
+            if (controls[i].name == id)
+            {
+                controls[i].key = controls[i].defaultKey;
+                return;
+            }
+        }
     }
 }
 
@@ -40,4 +56,5 @@ public struct DefaultControl
 {
     public string name;
     public KeyCode key;
+    public KeyCode defaultKey;
 }
