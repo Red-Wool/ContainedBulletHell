@@ -79,12 +79,12 @@ public class PlayerMove : MonoBehaviour
             if (hp.value <= 0)
             {
                 StartCoroutine(Death());
-
             }
             else
             {
                 SoundManager.instance.hurt.Play();
                 StartCoroutine(Invincible(3f));
+                StatsManager.instance.shotsTaken++;
             }
         }
     }

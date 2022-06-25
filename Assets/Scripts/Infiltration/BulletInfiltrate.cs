@@ -166,15 +166,9 @@ public class BulletInfiltrate : MonoBehaviour {
 
         //Double Kill all just in case!
         DOTween.KillAll();
-        string[] sceneNames = new string[] {"Tutorial", "TreeTank", "LighthouseGolem", "OvenFinale" };
-        int sceneIndex = Array.IndexOf(sceneNames, SceneManager.GetActiveScene().name);
-        if (sceneIndex == -1) {
-            Debug.Log("Scene not found :(");
-        } else if (sceneIndex == sceneNames.Length - 1) {
-            SceneManager.LoadScene("WinScene");
-        } else {
-            SceneManager.LoadScene(sceneNames[sceneIndex+1]);
-        }
+
+        // moved scene transitions to inside StatsManager
+        StatsManager.instance.EndBattle();
     }
 
     public void ExitBullet() {

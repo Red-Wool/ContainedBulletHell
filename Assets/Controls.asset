@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controls:
   - name: MoveLeft
-    key: 115
+    key: 97
     defaultKey: 97
   - name: MoveRight
-    key: 97
+    key: 100
     defaultKey: 100
   - name: MoveUp
-    key: 100
+    key: 119
     defaultKey: 119
   - name: MoveDown
-    key: 97
+    key: 115
     defaultKey: 115
   - name: SlowMove
     key: 304
