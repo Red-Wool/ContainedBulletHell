@@ -10,6 +10,7 @@ TagManager:
   - Portal
   - Exit
   - InfEnemy
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX

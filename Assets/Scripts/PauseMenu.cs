@@ -20,9 +20,9 @@ public class PauseMenu : MonoBehaviour
     private bool isPaused = false;
     private int currentTime = 0;
 
-    private void SetControl(ControlList controls)
+    private void SetControl(OptionObject option)
     {
-        pause = controls.GetControl("Pause");
+        pause = option.controls.GetControl("Pause");
     }
 
     private void Awake()

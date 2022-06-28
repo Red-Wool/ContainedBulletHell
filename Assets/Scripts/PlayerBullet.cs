@@ -59,6 +59,7 @@ public class PlayerBullet : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Enemy")) {
+            StatsManager.instance.shotsHit++;
             switch (type) {
                 case PlayerWeapon.Intel:
                     if (intel)
@@ -82,6 +83,7 @@ public class PlayerBullet : MonoBehaviour {
             }
             gameObject.SetActive(false);
         } else if (collision.gameObject.CompareTag("InfEnemy")) {
+            StatsManager.instance.shotsHit++;
             if (collision.gameObject.GetComponent<InfiltrationEnemyScript>().Damage())
             {
                 intel.value += 50f;
@@ -92,6 +94,7 @@ public class PlayerBullet : MonoBehaviour {
         } else if (collision.gameObject.CompareTag("Border")) {
             gameObject.SetActive(false);
         } else if (type == PlayerWeapon.Weaken && collision.gameObject.CompareTag("EnemyBullet")) {
+            StatsManager.instance.shotsHit++;
             collision.gameObject.GetComponent<EnemyBullet>().Weaken();
             ParticleManager.instance.PlayParticle(ParticleManager.instance.weakenHit, Vector3.Lerp(transform.position, collision.gameObject.transform.position, .8f));
             gameObject.SetActive(false);

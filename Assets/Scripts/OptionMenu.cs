@@ -7,12 +7,15 @@ using DG.Tweening;
 
 public class OptionMenu : MonoBehaviour
 {
-    public delegate void ChangeControlHandler(ControlList controls);
+    public delegate void ChangeControlHandler(OptionObject controls);
     public static event ChangeControlHandler ChangeControls;
 
     public OptionObject options;
 
     public RectTransform panel;
+
+    public Toggle toggleShoot;
+    public Toggle toggleSlowMove;
 
     public Slider musicSlider;
     public Slider sfxSlider;
@@ -26,6 +29,10 @@ public class OptionMenu : MonoBehaviour
     {
         musicSlider.value = options.musicPercent;
         sfxSlider.value = options.sfxPercent;
+
+        toggleShoot.isOn = options.toggleShoot;
+        toggleSlowMove.isOn = options.toggleSlowMove;
+
         UpdateControls();
     }
 
@@ -49,17 +56,17 @@ public class OptionMenu : MonoBehaviour
 
     public void UpdateControls()
     {
-        ChangeControls.Invoke(options.controls);
+        ChangeControls.Invoke(options);
     }
 
-    public void MusicSlider()
+    public void CheckUI()
     {
         options.musicPercent = musicSlider.value;
-    }
-
-    public void SFXSlider()
-    {
         options.sfxPercent = sfxSlider.value;
+
+        options.toggleShoot = toggleShoot.isOn;
+        options.toggleSlowMove = toggleSlowMove.isOn;
+        ChangeControls.Invoke(options);
     }
 
     public void DisableMenuQuick()
@@ -90,12 +97,12 @@ public class OptionMenu : MonoBehaviour
     public void ResetKey(string id)
     {
         options.controls.ResetControl(id);
-        ChangeControls.Invoke(options.controls);
+        ChangeControls.Invoke(options);
     }
 
     public void SetControl(string id, KeyCode key)
     {
         options.controls.SetControl(id, key);
-        ChangeControls.Invoke(options.controls);
+        ChangeControls.Invoke(options);
     }
 }

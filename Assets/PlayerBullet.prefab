@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 8972149192101566843}
   m_Layer: 0
   m_Name: PlayerBullet
-  m_TagString: Untagged
+  m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,6 +129,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 30
   lifetime: 2
+  mod:
+    speedUp: 0
+    randomAngle: 0
+    angleRange: 0
+    angleUp: 0
+    spawnOnDeath: 0
+    bulletOnDeath:
+      pattern:
+        bulletAngles: []
+        speed: 0
+        key: 0
+      loops: 0
+      rate: 0
+      wait: 0
+      aimAtPlayer: 0
+      angleOffset: 0
+      loopAngle: 0
+      loopSpeed: 0
 --- !u!61 &1527230188587851605
 BoxCollider2D:
   m_ObjectHideFlags: 0

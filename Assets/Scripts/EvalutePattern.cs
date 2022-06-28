@@ -42,14 +42,14 @@ public class EvalutePattern : MonoBehaviour
         }
     }
 
-    public void EvaluteBulletSequence(EnemyBulletSequence sequence, Transform pos, Transform target, Transform parent)
+    public IEnumerator EvaluteBulletSequence(EnemyBulletSequence sequence, Transform pos, Transform target, Transform parent)
     {
-        EvaluteBulletSequence(sequence, pos, target, new Vector2[] { Vector2.zero }, parent);
+        return EvaluteBulletSequence(sequence, pos, target, new Vector2[] { Vector2.zero }, parent);
     }
 
-    public void EvaluteBulletSequence(EnemyBulletSequence sequence, Transform pos, Transform target, Vector2[] randPos, Transform parent)
+    public IEnumerator EvaluteBulletSequence(EnemyBulletSequence sequence, Transform pos, Transform target, Vector2[] randPos, Transform parent)
     {
-        StartCoroutine(PlayBulletSequence(sequence, pos, target, randPos, parent));
+        return PlayBulletSequence(sequence, pos, target, randPos, parent);
     }
 
     public IEnumerator PlayBulletSequence(EnemyBulletSequence sequence, Transform pos, Transform target, Vector2[] randPos, Transform parent)

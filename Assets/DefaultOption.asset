@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebdfc504746ae2b4f94add0919710346, type: 3}
   m_Name: DefaultOption
   m_EditorClassIdentifier: 
-  musicPercent: 1
-  sfxPercent: 1
+  musicPercent: 0
+  sfxPercent: 0
+  toggleShoot: 0
+  toggleSlowMove: 0
   controls: {fileID: 11400000, guid: 2bb8c04d7b64da54da8428d729f525b9, type: 2}

@@ -12,23 +12,30 @@ public class PlayerMove : MonoBehaviour
     private KeyCode moveDown = KeyCode.S;
     private KeyCode slowMove = KeyCode.LeftShift;
 
+    private bool smToggleCheck;
+    private bool smToggleOn;
+
     [SerializeField] private float speed;
     [SerializeField] private StoredValue hp;
 
     [SerializeField] private PlayerShoot shoot;
     [SerializeField] private GameObject sprite;
 
+    public Vector3 additionalVelocity;
     private bool invincible;
 
     private Rigidbody2D rb;
 
-    private void SetControl(ControlList controls)
+    private void SetControl(OptionObject option)
     {
-        moveLeft = controls.GetControl("MoveLeft");
-        moveRight = controls.GetControl("MoveRight");
-        moveUp = controls.GetControl("MoveUp");
-        moveDown = controls.GetControl("MoveDown");
-        slowMove = controls.GetControl("SlowMove");
+        moveLeft = option.controls.GetControl("MoveLeft");
+        moveRight = option.controls.GetControl("MoveRight");
+        moveUp = option.controls.GetControl("MoveUp");
+        moveDown = option.controls.GetControl("MoveDown");
+        slowMove = option.controls.GetControl("SlowMove");
+
+        smToggleCheck = option.toggleSlowMove;
+        smToggleOn = false;
     }
     private void Awake()
     {
@@ -58,7 +65,11 @@ public class PlayerMove : MonoBehaviour
 
         Vector2 move = new Vector2(x, y).normalized;
 
-        if (Input.GetKey(slowMove))
+        if (smToggleCheck && Input.GetKeyDown(slowMove))
+        {
+            smToggleOn = !smToggleOn;
+        }
+        else if (Input.GetKey(slowMove) || smToggleOn)
         {
             move *= 0.5f;
         }
@@ -75,6 +86,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (shoot.canControl && !invincible)
         {
+            StatsManager.instance.damageTaken++;
             hp.value -= damage;
             if (hp.value <= 0)
             {
@@ -84,7 +96,6 @@ public class PlayerMove : MonoBehaviour
             {
                 SoundManager.instance.hurt.Play();
                 StartCoroutine(Invincible(3f));
-                StatsManager.instance.shotsTaken++;
             }
         }
     }
@@ -107,6 +118,22 @@ public class PlayerMove : MonoBehaviour
         yield return new WaitForSeconds(time);
         //transform.position = new Vector3(Mathf.Clamp(transform.position.x, -36, 36), Mathf.Clamp(transform.position.y, -20.5f, 20.5f));
         invincible = false;
+    }
+
+    public void Launch(Vector3 pos)
+    {
+        StartCoroutine(Launch(pos, 1f));
+    }
+    public IEnumerator Launch(Vector3 pos, float time)
+    {
+        shoot.canControl = false;
+        transform.DOMove(pos, time);
+        transform.DOScale(Vector3.one * 2, time * .5f).SetEase(Ease.InOutSine).SetLoops(2, LoopType.Yoyo);
+
+        yield return new WaitForSeconds(time);
+
+        Invincible(.1f);
+        shoot.canControl = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

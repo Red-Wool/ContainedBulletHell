@@ -66,9 +66,9 @@ public class EnemyBullet : MonoBehaviour
 
     public void Death()
     {
-        if (mod.spawnOnDeath)
+        if (mod.spawnOnDeath && gameObject.activeSelf)
         {
-            EvalutePattern.instance.EvaluteBulletSequence(mod.bulletOnDeath, transform, BulletInfiltrate.instance.player.transform, transform.parent);
+            StartCoroutine(EvalutePattern.instance.EvaluteBulletSequence(mod.bulletOnDeath, transform, BulletInfiltrate.instance.player.transform, transform.parent));
         }
         gameObject.SetActive(false);
     }

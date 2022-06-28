@@ -8,6 +8,9 @@ public class PlayerShoot : MonoBehaviour
     private KeyCode shoot = KeyCode.Mouse0;
     private KeyCode weakenLaser = KeyCode.Mouse1;
 
+    private bool sToggleCheck;
+    private bool sToggleOn;
+
     [SerializeField] private ObjectPool normalShoot;
     [SerializeField] private ObjectPool weakLaser;
 
@@ -27,10 +30,13 @@ public class PlayerShoot : MonoBehaviour
 
     [SerializeField] private PlayerMove move;
 
-    private void SetControl(ControlList controls)
+    private void SetControl(OptionObject option)
     {
-        shoot = controls.GetControl("Shoot");
-        weakenLaser = controls.GetControl("WeakenLaser");
+        shoot = option.controls.GetControl("Shoot");
+        weakenLaser = option.controls.GetControl("WeakenLaser");
+
+        sToggleCheck = option.toggleShoot;
+        sToggleOn = false;
     }
 
     private void Awake()
@@ -73,9 +79,13 @@ public class PlayerShoot : MonoBehaviour
         {
             rateTimer += Time.deltaTime;
 
-
-            if (Input.GetKey(shoot) && rateTimer > shootRate)
+            if (sToggleCheck && Input.GetKeyDown(shoot))
             {
+                sToggleOn = !sToggleOn;
+            }
+            else if ((Input.GetKey(shoot) || sToggleOn) && rateTimer > shootRate)
+            {
+                
                 ParticleManager.instance.shoot.Play();
                 if (second)
                 {
@@ -110,6 +120,7 @@ public class PlayerShoot : MonoBehaviour
 
     public void Shoot(GameObject obj, float angle, PlayerWeapon type)
     {
+        StatsManager.instance.totalShotsTaken++;
         rateTimer = 0f;
 
         obj.transform.position = transform.position;

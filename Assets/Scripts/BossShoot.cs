@@ -10,6 +10,8 @@ public class BossShoot : MonoBehaviour
     [SerializeField] private StoredValue bossHP;
     [SerializeField] private float maxHP; public float MaxHP { get { return maxHP; } }
 
+    private IEnumerator shooting;
+
     private int sessionPointer;
     private int sequencePointer;
     private bool second; public bool Phase2 { get { return second; } }
@@ -73,8 +75,9 @@ public class BossShoot : MonoBehaviour
 
                 if (CheckTimer(curSequence.wait))
                 {
-                    
-                    EvalutePattern.instance.EvaluteBulletSequence(curSequence, transform, player.transform, curSession.spawnPos, container.transform);
+                    shooting = EvalutePattern.instance.EvaluteBulletSequence(curSequence, transform, player.transform, curSession.spawnPos, container.transform);
+                    StartCoroutine(shooting);
+
                     sequencePointer++;
                 }
             }
@@ -87,6 +90,7 @@ public class BossShoot : MonoBehaviour
         if (!final && bossHP.value <= 0)
         {
             ParticleManager.instance.Toggle(ParticleManager.instance.stars, true);
+            StopCoroutine(shooting);
             final = true;
         }
     }

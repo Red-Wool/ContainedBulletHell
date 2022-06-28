@@ -288,7 +288,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: shootRate
-      value: 2
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -1646,7 +1646,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: shootRate
-      value: 2.5
+      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -35067,7 +35067,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: shootRate
-      value: 2.5
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}

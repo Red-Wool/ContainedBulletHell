@@ -7,6 +7,8 @@ public class InfiltrationEnemyScript : MonoBehaviour {
     [SerializeField] private EnemyBulletSequence bullets;
     [SerializeField] private EnemyMoveSequence move;
 
+    private IEnumerator shooting;
+
     public float shootRate;
     public float moveRate;
     public int hp;
@@ -35,7 +37,8 @@ public class InfiltrationEnemyScript : MonoBehaviour {
         // check if it's time to spawn a new bullet
         if (UtilFunctions.CheckTimer(ref bdc, shootRate))
         {
-            EvalutePattern.instance.EvaluteBulletSequence(bullets, transform, player.transform, transform.parent);
+            shooting = EvalutePattern.instance.EvaluteBulletSequence(bullets, transform, player.transform, transform.parent);
+            StartCoroutine(shooting);
         }
         if (UtilFunctions.CheckTimer(ref moveTimer, moveRate))
         {
@@ -48,6 +51,9 @@ public class InfiltrationEnemyScript : MonoBehaviour {
         if (hp <= 0) {
             // maybe we can add a cool effect here, or require the player to kill all the enemies before getting the star?
             transform.DOKill();
+            if (shooting != null)
+                StopCoroutine(shooting);
+
             SoundManager.instance.explosion.Play();
             ParticleManager.instance.PlayParticle(ParticleManager.instance.explosion, transform.position);
             gameObject.SetActive(false);

@@ -9,9 +9,9 @@ public class ChangeControlButton : MonoBehaviour
 
     public TMP_Text buttonText;
 
-    private void UpdateText(ControlList controls)
+    private void UpdateText(OptionObject option)
     {
-        buttonText.text = controls.GetControl(keyID).ToString();
+        buttonText.text = option.controls.GetControl(keyID).ToString();
     }
 
     private void Awake()
