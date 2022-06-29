@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class WindArea : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Vector2 windDirection;
+
+    private void DisableSelf()
     {
-        
+        gameObject.SetActive(false);
+    }
+    private void Awake()
+    {
+        BulletInfiltrate.Exit += DisableSelf;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerMove>().additionalVelocity = windDirection;
+        }   
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerMove>().additionalVelocity = Vector3.zero;
+        }
     }
 }

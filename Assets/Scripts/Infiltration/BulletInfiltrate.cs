@@ -8,6 +8,9 @@ using System;
 public class BulletInfiltrate : MonoBehaviour {
     public static BulletInfiltrate instance { get; private set; }
 
+    public delegate void ExitHandler();
+    public static event ExitHandler Exit;
+
     public PlayerMove player;
     public BossShoot boss;
     public QuipDisplay quip;
@@ -172,6 +175,7 @@ public class BulletInfiltrate : MonoBehaviour {
     }
 
     public void ExitBullet() {
+        Exit?.Invoke();
         scaler.Scale(false);
         EvalutePattern.instance.StopAllPatterns();
         StartCoroutine(MoveIn());

@@ -21,7 +21,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private PlayerShoot shoot;
     [SerializeField] private GameObject sprite;
 
-    public Vector3 additionalVelocity;
+    public Vector2 additionalVelocity;
     private bool invincible;
 
     private Rigidbody2D rb;
@@ -79,7 +79,7 @@ public class PlayerMove : MonoBehaviour
             move *= 0f;
         }
 
-        rb.velocity = (move * speed);
+        rb.velocity = (move * speed) + additionalVelocity;
     }
 
     public void Damage(int damage)
@@ -122,17 +122,17 @@ public class PlayerMove : MonoBehaviour
 
     public void Launch(Vector3 pos)
     {
-        StartCoroutine(Launch(pos, 1f));
+        StartCoroutine(Launch(pos, 2f));
     }
     public IEnumerator Launch(Vector3 pos, float time)
     {
         shoot.canControl = false;
         transform.DOMove(pos, time);
-        transform.DOScale(Vector3.one * 2, time * .5f).SetEase(Ease.InOutSine).SetLoops(2, LoopType.Yoyo);
+        transform.DOScale(Vector3.one * 3, time * .5f).SetEase(Ease.InOutSine).SetLoops(2, LoopType.Yoyo);
 
         yield return new WaitForSeconds(time);
 
-        Invincible(.1f);
+        StartCoroutine(Invincible(1f));
         shoot.canControl = true;
     }
 

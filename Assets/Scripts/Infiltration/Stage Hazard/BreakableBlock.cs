@@ -5,16 +5,15 @@ using UnityEngine;
 public class BreakableBlock : MonoBehaviour
 {
     private int hp = 10;
-    // Start is called before the first frame update
-    void Start()
+    private bool canBreak = true;
+    private void DisableSelf()
     {
-        
+        canBreak = false;
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        canBreak = true;
+        BulletInfiltrate.Exit += DisableSelf;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,7 +21,7 @@ public class BreakableBlock : MonoBehaviour
         if (collision.gameObject.tag == "PlayerBullet" || collision.gameObject.tag == "EnemyBullet")
         {
             hp--;
-            if (hp <= 0 && transform.parent.lossyScale.x > .9f)
+            if (hp <= 0 && canBreak)
             {
                 SoundManager.instance.explosion.Play();
                 ParticleManager.instance.PlayParticle(ParticleManager.instance.explosion, transform.position);
