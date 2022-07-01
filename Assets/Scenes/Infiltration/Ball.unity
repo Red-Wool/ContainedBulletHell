@@ -631,6 +631,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2020631856211607216, guid: 00a00849e8c4fef49bf850c5e6ac5cbe,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020631856211607216, guid: 00a00849e8c4fef49bf850c5e6ac5cbe,
+        type: 3}
       propertyPath: m_TagString
       value: Border
       objectReference: {fileID: 0}
@@ -2681,6 +2686,11 @@ PrefabInstance:
       propertyPath: m_TileSpriteArray.Array.data[1].m_RefCount
       value: 137
       objectReference: {fileID: 0}
+    - target: {fileID: 3883342557580254499, guid: 00a00849e8c4fef49bf850c5e6ac5cbe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3934420774793409847, guid: 00a00849e8c4fef49bf850c5e6ac5cbe,
         type: 3}
       propertyPath: m_Name
@@ -2699,7 +2709,7 @@ PrefabInstance:
     - target: {fileID: 4638817078034605499, guid: 00a00849e8c4fef49bf850c5e6ac5cbe,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4638817078034605499, guid: 00a00849e8c4fef49bf850c5e6ac5cbe,
         type: 3}
@@ -2750,6 +2760,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515460683030701399, guid: 00a00849e8c4fef49bf850c5e6ac5cbe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7468667730418830016, guid: 00a00849e8c4fef49bf850c5e6ac5cbe,
         type: 3}
