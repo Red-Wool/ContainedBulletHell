@@ -131,7 +131,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: hp
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -151,7 +151,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: bullets.loops
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -167,6 +167,11 @@ PrefabInstance:
         type: 3}
       propertyPath: bullets.angleOffset
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
+        type: 3}
+      propertyPath: bullets.pattern.speed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -287,7 +292,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: hp
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -307,7 +312,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: bullets.loops
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -323,6 +328,11 @@ PrefabInstance:
         type: 3}
       propertyPath: bullets.angleOffset
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
+        type: 3}
+      propertyPath: bullets.pattern.speed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -433,7 +443,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: hp
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -453,7 +463,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: bullets.loops
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -469,6 +479,11 @@ PrefabInstance:
         type: 3}
       propertyPath: bullets.angleOffset
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
+        type: 3}
+      propertyPath: bullets.pattern.speed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -764,7 +779,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: hp
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -784,7 +799,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: bullets.loops
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -800,6 +815,11 @@ PrefabInstance:
         type: 3}
       propertyPath: bullets.angleOffset
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
+        type: 3}
+      propertyPath: bullets.pattern.speed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -1133,7 +1153,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: hp
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -1153,7 +1173,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: bullets.loops
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -1169,6 +1189,11 @@ PrefabInstance:
         type: 3}
       propertyPath: bullets.angleOffset
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
+        type: 3}
+      propertyPath: bullets.pattern.speed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -1859,7 +1884,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: hp
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -1879,7 +1904,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: bullets.loops
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -1895,6 +1920,11 @@ PrefabInstance:
         type: 3}
       propertyPath: bullets.angleOffset
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
+        type: 3}
+      propertyPath: bullets.pattern.speed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -2308,7 +2338,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: hp
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -2328,7 +2358,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: bullets.loops
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -2344,6 +2374,11 @@ PrefabInstance:
         type: 3}
       propertyPath: bullets.angleOffset
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
+        type: 3}
+      propertyPath: bullets.pattern.speed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -2464,7 +2499,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: hp
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -2484,7 +2519,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: bullets.loops
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -2500,6 +2535,11 @@ PrefabInstance:
         type: 3}
       propertyPath: bullets.angleOffset
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
+        type: 3}
+      propertyPath: bullets.pattern.speed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -2610,7 +2650,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: hp
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -2630,7 +2670,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: bullets.loops
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -2646,6 +2686,11 @@ PrefabInstance:
         type: 3}
       propertyPath: bullets.angleOffset
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
+        type: 3}
+      propertyPath: bullets.pattern.speed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -20501,7 +20546,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: hp
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -20521,7 +20566,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: bullets.loops
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -20537,6 +20582,11 @@ PrefabInstance:
         type: 3}
       propertyPath: bullets.angleOffset
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
+        type: 3}
+      propertyPath: bullets.pattern.speed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -20657,7 +20707,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: hp
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -20677,7 +20727,7 @@ PrefabInstance:
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
       propertyPath: bullets.loops
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -20693,6 +20743,11 @@ PrefabInstance:
         type: 3}
       propertyPath: bullets.angleOffset
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
+        type: 3}
+      propertyPath: bullets.pattern.speed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2359003958984967284, guid: e4a139f5bc9975f40820a437e9f06e1b,
         type: 3}
@@ -21604,7 +21659,7 @@ PrefabInstance:
     - target: {fileID: 904239309182086380, guid: 01804318a4ccbec47b855441a2033fbe,
         type: 3}
       propertyPath: windDirection.x
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3881282929535057859, guid: 01804318a4ccbec47b855441a2033fbe,
         type: 3}

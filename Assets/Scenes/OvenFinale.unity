@@ -3591,7 +3591,9 @@ MonoBehaviour:
     sceneName: FireLaser
     display: {fileID: 988852980}
     enterText: Fire Laser
-    subText: Only good when warm
+    subText: 'A small taste of
+
+      bullet hell'
   - weakID: 2
     sceneName: BurntPie
     display: {fileID: 1817030116}

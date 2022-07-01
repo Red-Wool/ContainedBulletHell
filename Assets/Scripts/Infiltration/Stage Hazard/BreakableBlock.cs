@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class BreakableBlock : MonoBehaviour
 {
-    private int hp = 10;
+    private int hp = 5;
     private bool canBreak = true;
     private void DisableSelf()
     {
         canBreak = false;
+        BulletInfiltrate.Exit -= DisableSelf;
     }
     private void Awake()
     {
@@ -23,7 +24,7 @@ public class BreakableBlock : MonoBehaviour
             hp--;
             if (hp <= 0 && canBreak)
             {
-                SoundManager.instance.explosion.Play();
+                //SoundManager.instance.explosion.Play();
                 ParticleManager.instance.PlayParticle(ParticleManager.instance.explosion, transform.position);
                 gameObject.SetActive(false);
             }

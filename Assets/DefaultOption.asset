@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DefaultOption
   m_EditorClassIdentifier: 
   musicPercent: 0
-  sfxPercent: 0
-  toggleShoot: 0
+  sfxPercent: 1
+  toggleShoot: 1
   toggleSlowMove: 0
   controls: {fileID: 11400000, guid: 2bb8c04d7b64da54da8428d729f525b9, type: 2}

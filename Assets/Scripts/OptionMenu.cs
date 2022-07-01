@@ -21,18 +21,25 @@ public class OptionMenu : MonoBehaviour
     public Slider sfxSlider;
 
     private bool settingControl;
+    private bool canUpdate;
     private string controlID;
     public GameObject setControlPanel;
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
+        //Debug.Log(options.toggleShoot);
+        canUpdate = false;
         musicSlider.value = options.musicPercent;
         sfxSlider.value = options.sfxPercent;
 
         toggleShoot.isOn = options.toggleShoot;
         toggleSlowMove.isOn = options.toggleSlowMove;
+        canUpdate = true;
+    }
 
+    void Start()
+    {
         UpdateControls();
     }
 
@@ -61,12 +68,16 @@ public class OptionMenu : MonoBehaviour
 
     public void CheckUI()
     {
-        options.musicPercent = musicSlider.value;
-        options.sfxPercent = sfxSlider.value;
+        if (canUpdate)
+        {
+            options.musicPercent = musicSlider.value;
+            options.sfxPercent = sfxSlider.value;
 
-        options.toggleShoot = toggleShoot.isOn;
-        options.toggleSlowMove = toggleSlowMove.isOn;
-        ChangeControls.Invoke(options);
+            options.toggleShoot = toggleShoot.isOn;
+            options.toggleSlowMove = toggleSlowMove.isOn;
+            
+        }
+        UpdateControls();
     }
 
     public void DisableMenuQuick()

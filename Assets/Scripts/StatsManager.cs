@@ -74,8 +74,8 @@ public class StatsManager : MonoBehaviour {
         //totalShotsTaken += shotsHit;
 
         // update text
-        bossDefeatTimeText.text = "Boss Defeat Time".PadRight(20) + ("" + ((int)bossDefeatTime / 60)).PadLeft(2, '0') + ":" + (bossDefeatTime % 60).ToString("0.00").PadLeft(2, '0');
-        totalTimeText.text = "Total Run Time".PadRight(20) + ("" + ((int)totalTime / 60)).PadLeft(2, '0') + ":" + (bossDefeatTime % 60).ToString("0.00").PadLeft(2, '0');
+        bossDefeatTimeText.text = "Boss Defeat Time".PadRight(20) + ("" + ((int)bossDefeatTime / 60)).PadLeft(2, '0') + ":" + (bossDefeatTime % 60).ToString("00.00").PadLeft(2, '0');
+        totalTimeText.text = "Total Run Time".PadRight(20) + ("" + ((int)totalTime / 60)).PadLeft(2, '0') + ":" + (bossDefeatTime % 60).ToString("00.00").PadLeft(2, '0');
         damageTakenText.text = "Hits Taken".PadRight(20) + (damageTaken == 0 ? "Flawless!" : damageTaken.ToString());
         shotHitText.text = "Shots Taken".PadRight(20) + shotsHit;
         totalShotsText.text = "Total Shots Taken".PadRight(20) + + totalShotsTaken;
@@ -87,6 +87,8 @@ public class StatsManager : MonoBehaviour {
     public void NextBossButton() {
         DOTween.KillAll();
         Cursor.visible = true;
+        Time.timeScale = 1f;
+
         string[] sceneNames = new string[] { "Tutorial", "TreeTank", "LighthouseGolem", "OvenFinale" };
         int sceneIndex = Array.IndexOf(sceneNames, SceneManager.GetActiveScene().name);
         if (sceneIndex == -1) {

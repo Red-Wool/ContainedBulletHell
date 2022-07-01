@@ -8,7 +8,13 @@ public class WindArea : MonoBehaviour
 
     private void DisableSelf()
     {
-        gameObject.SetActive(false);
+        if (gameObject != null)
+        {
+            BulletInfiltrate.Exit -= DisableSelf;
+            gameObject.SetActive(false);
+        }
+            
+            
     }
     private void Awake()
     {

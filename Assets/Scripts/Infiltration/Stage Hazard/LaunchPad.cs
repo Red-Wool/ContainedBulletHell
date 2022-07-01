@@ -8,10 +8,20 @@ public class LaunchPad : MonoBehaviour
     private void DisableSelf()
     {
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        BulletInfiltrate.Exit -= DisableSelf;
     }
     private void Awake()
     {
         BulletInfiltrate.Exit += DisableSelf;
+
+        StartCoroutine(DisableForABit());
+    }
+
+    public IEnumerator DisableForABit()
+    {
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        yield return new WaitForSeconds(3f);
+        gameObject.GetComponent<BoxCollider2D>().enabled = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
