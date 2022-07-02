@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4645745449771302502}
   - component: {fileID: 8317353386380641485}
   m_Layer: 31
-  m_Name: InfiltrateTwo
+  m_Name: TilemapPalette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,6 +136,15 @@ Tilemap:
       m_TileIndex: 11
       m_TileSpriteIndex: 11
       m_TileMatrixIndex: 2
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: 3, y: -2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 21
+      m_TileSpriteIndex: 21
+      m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
@@ -327,6 +336,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 79fbc70ec7c184444b1571468e5c9115, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: a0cfc5c9032cf944eae2a3bfa291ecef, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: f6ddccc66f188b045a26c1b0a4d3ef00, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 37cebe8aca9ada84ea1356ff09edfe8b, type: 3}
@@ -370,8 +381,10 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 37bd87c4ed6329f4e8041ff388f301dc, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 095e850e88c4fcb48afa69531b287be1, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 6e485086be79917438679d5ac24e91fe, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 3
+  - m_RefCount: 4
     m_Data:
       e00: 1
       e01: 0
@@ -426,7 +439,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 20
+  - m_RefCount: 21
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 1
     m_Data: {r: 0.73122174, g: 0.49068478, b: 0.5640194, a: 1}
