@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InfiltrateBulletScript : MonoBehaviour {
     public float lifetime;
+    public float grazeValue;
     public Vector3 moveVector;
     public bool running = false;
 

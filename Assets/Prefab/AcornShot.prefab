@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 2265001792393556836}
   - component: {fileID: 7200584030079166993}
   m_Layer: 0
-  m_Name: Acorn
+  m_Name: AcornShot
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,8 +176,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   lifetime: 10
+  grazeValue: 5
   mod:
     speedUp: 0
+    chase: 0
     randomAngle: 0
     angleRange: 0
     angleUp: 0

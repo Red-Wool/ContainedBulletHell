@@ -6,7 +6,7 @@ public class CameraFollow : MonoBehaviour
 {
     public Transform player;
 
-    public Material transitionShader;
+    //public Material transitionShader;
 
     // Start is called before the first frame update
     void Start()

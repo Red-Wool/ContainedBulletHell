@@ -24,7 +24,7 @@ public class BreakableBlock : MonoBehaviour
             hp--;
             if (hp <= 0 && canBreak)
             {
-                //SoundManager.instance.explosion.Play();
+                //SoundManager.instance.graze.Play();
                 ParticleManager.instance.PlayParticle(ParticleManager.instance.explosion, transform.position);
                 gameObject.SetActive(false);
             }

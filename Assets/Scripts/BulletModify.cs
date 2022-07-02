@@ -8,6 +8,8 @@ public class BulletModify
     [Header("Movement")]
     public float speedUp;
 
+    public bool chase;
+
     [Space(10),Header("Angle")]
     public bool randomAngle;
     public float angleRange;

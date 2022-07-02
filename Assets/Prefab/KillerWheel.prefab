@@ -95,8 +95,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   lifetime: 3
+  grazeValue: 3
   mod:
     speedUp: 0
+    chase: 0
     randomAngle: 0
     angleRange: 0
     angleUp: 0
@@ -111,7 +113,7 @@ MonoBehaviour:
         - -90
         - -45
         speed: 12
-        key: 1
+        key: 4
       loops: 1
       rate: 0
       wait: 0

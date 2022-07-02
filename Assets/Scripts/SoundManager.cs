@@ -18,6 +18,7 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
+        OptionMenu.ChangeControls += UpdateVolume;
         if (instance != null && instance != this)
         {
             Destroy(this);
@@ -25,6 +26,23 @@ public class SoundManager : MonoBehaviour
         else
         {
             instance = this;
+        }
+    }
+
+    public void UpdateVolume(OptionObject option)
+    {
+        if (this != null)
+        {
+            music.volume = option.musicPercent;
+
+            shoot.volume = option.sfxPercent * .2f;
+            laser.volume = option.sfxPercent * .8f;
+            laserGet.volume = option.sfxPercent * .7f;
+            graze.volume = option.sfxPercent * .8f;
+            hurt.volume = option.sfxPercent * .8f;
+            explosion.volume = option.sfxPercent * .8f;
+            infiltrateIn.volume = option.sfxPercent * .8f;
+            infiltrateOut.volume = option.sfxPercent * .8f;
         }
     }
 

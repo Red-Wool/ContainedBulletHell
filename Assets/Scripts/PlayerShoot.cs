@@ -152,7 +152,7 @@ public class PlayerShoot : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("EnemyBullet"))
             {
-                AddIntel(5);
+                AddIntel(collision.gameObject.GetComponent<EnemyBullet>().grazeValue);
                 SoundManager.instance.graze.Play();
 
                 UtilFunctions.PulseObject(graze, 0.2f, 0.5f, 0f, 1);

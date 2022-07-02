@@ -197,8 +197,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   lifetime: 20
+  grazeValue: 5
   mod:
     speedUp: 3
+    chase: 0
     randomAngle: 1
     angleRange: 70
     angleUp: 0
