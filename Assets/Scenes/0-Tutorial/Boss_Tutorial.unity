@@ -3126,7 +3126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 973646304}
-  transitionShader: {fileID: 2100000, guid: 61b675e71b170334d841442658410288, type: 2}
 --- !u!81 &387115635
 AudioListener:
   m_ObjectHideFlags: 0
@@ -8808,7 +8807,7 @@ MonoBehaviour:
   maxHP: 500
   finalScene:
     weakID: 0
-    sceneName: TutorialInfiltrate
+    sceneName: FInf_Tutorial
     display: {fileID: 0}
     enterText: Ionantha
     subText: 'The dummy''s name is Ionantha
@@ -8820,7 +8819,7 @@ MonoBehaviour:
     initAmount: 10
   weakBullets:
   - weakID: 0
-    sceneName: Ball
+    sceneName: Inf_Ball
     display: {fileID: 1738486325}
     enterText: Nice Job!
     subText: 'There you go!

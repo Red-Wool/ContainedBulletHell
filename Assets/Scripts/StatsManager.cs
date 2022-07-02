@@ -89,7 +89,7 @@ public class StatsManager : MonoBehaviour {
         Cursor.visible = true;
         Time.timeScale = 1f;
 
-        string[] sceneNames = new string[] { "Tutorial", "TreeTank", "LighthouseGolem", "OvenFinale" };
+        string[] sceneNames = new string[] { "Boss_Tutorial", "Boss_TreeTank", "Boss_Lighthouse", "Boss_Oven" };
         int sceneIndex = Array.IndexOf(sceneNames, SceneManager.GetActiveScene().name);
         if (sceneIndex == -1) {
             Debug.Log("Scene not found :(");

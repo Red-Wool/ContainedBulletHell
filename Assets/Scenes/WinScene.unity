@@ -205,13 +205,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 354235124}
         m_MethodName: LoadScene
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Title
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &354235122
@@ -260,10 +260,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 354235119}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdc349e2af4ce3d40975482dafb80021, type: 3}
+  m_Script: {fileID: 11500000, guid: da1c27e00b5eef84db672c24910d42b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Title
 --- !u!1 &391610809
 GameObject:
   m_ObjectHideFlags: 0

@@ -5575,7 +5575,7 @@ MonoBehaviour:
   maxHP: 1500
   finalScene:
     weakID: 0
-    sceneName: CursedOvenInfiltrate
+    sceneName: FInf_Oven
     display: {fileID: 0}
     enterText: Cursed Oven
     subText: Finish them!

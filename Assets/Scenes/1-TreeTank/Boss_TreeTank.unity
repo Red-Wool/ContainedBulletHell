@@ -7922,7 +7922,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 342114527}
-  transitionShader: {fileID: 0}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -8842,7 +8841,7 @@ MonoBehaviour:
   maxHP: 500
   finalScene:
     weakID: 0
-    sceneName: TreeTankInfiltrate
+    sceneName: FInf_TreeTank
     display: {fileID: 0}
     enterText: Tree Tank
     subText: 'Coniferous and Deciduous
@@ -8860,12 +8859,12 @@ MonoBehaviour:
     initAmount: 30
   weakBullets:
   - weakID: 0
-    sceneName: Acorn
+    sceneName: Inf_Acorn
     display: {fileID: 1807365457}
     enterText: Acorn Shot
     subText: filled to brim with money
   - weakID: 1
-    sceneName: PineconeBomb
+    sceneName: Inf_Pinecone
     display: {fileID: 1843419868}
     enterText: Pinecone Bomb
     subText: Explosive finish

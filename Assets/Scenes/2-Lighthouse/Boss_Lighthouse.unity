@@ -690,7 +690,7 @@ MonoBehaviour:
   maxHP: 600
   finalScene:
     weakID: 0
-    sceneName: LighthouseGolemInfiltrate
+    sceneName: FInf_Lighthouse
     display: {fileID: 0}
     enterText: Lighthouse Golem
     subText: spooky
@@ -706,17 +706,17 @@ MonoBehaviour:
     initAmount: 30
   weakBullets:
   - weakID: 0
-    sceneName: SandStone
+    sceneName: Inf_SandStone
     display: {fileID: 1864212050}
     enterText: 'Sandstone '
     subText: Not an egg
   - weakID: 1
-    sceneName: BoatBlast
+    sceneName: Inf_BoatBlast
     display: {fileID: 80237053}
     enterText: Boat Blast
     subText: 'land '
   - weakID: 2
-    sceneName: LightTrap
+    sceneName: Inf_LightTrap
     display: {fileID: 118580466}
     enterText: Light Trap
     subText: energy
@@ -5207,7 +5207,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1083696700}
-  transitionShader: {fileID: 0}
 --- !u!81 &971942282
 AudioListener:
   m_ObjectHideFlags: 0

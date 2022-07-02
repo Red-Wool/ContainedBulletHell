@@ -334,7 +334,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1006303368}
-  transitionShader: {fileID: 0}
 --- !u!81 &124938650
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3561,7 +3560,7 @@ MonoBehaviour:
   maxHP: 1500
   finalScene:
     weakID: 0
-    sceneName: CursedOvenInfiltrate
+    sceneName: FInf_Oven
     display: {fileID: 0}
     enterText: Cursed Oven
     subText: Finish them!
@@ -3583,19 +3582,19 @@ MonoBehaviour:
     initAmount: 30
   weakBullets:
   - weakID: 0
-    sceneName: Cookie
+    sceneName: Inf_Cookie
     display: {fileID: 1767468375}
     enterText: Burnt Cookie
     subText: Suspiciously Good
   - weakID: 1
-    sceneName: FireLaser
+    sceneName: Inf_FireLaser
     display: {fileID: 988852980}
     enterText: Fire Laser
     subText: 'A small taste of
 
       bullet hell'
   - weakID: 2
-    sceneName: BurntPie
+    sceneName: Inf_BurntPie
     display: {fileID: 1817030116}
     enterText: Burnt Pie
     subText: Layers
