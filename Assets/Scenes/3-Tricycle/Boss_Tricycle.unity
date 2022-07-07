@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 59128159}
   - component: {fileID: 59128158}
   m_Layer: 5
-  m_Name: FireLaser
+  m_Name: HonkingHorn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,7 +237,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -100}
+  m_AnchoredPosition: {x: 15, y: -100}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &59128158
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1263318a3571d89438c16687cf0145a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9cecd777f3556c646b746e503840ed53, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -567,7 +567,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1263318a3571d89438c16687cf0145a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9cecd777f3556c646b746e503840ed53, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -777,7 +777,7 @@ Animator:
   m_GameObject: {fileID: 245430893}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1195d9dd21821b54bba2f2840fe7ff26, type: 2}
+  m_Controller: {fileID: 9100000, guid: 23f96c7559d3fa54a96aba4d06a3fd3e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -825,7 +825,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4057700774686240859, guid: 67f349e5eabf5db4287a39f61842d357,
+  m_Sprite: {fileID: 7938086108960398205, guid: 47ae6de15ead7d645be148fb90159051,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -849,7 +849,7 @@ GameObject:
   - component: {fileID: 279338795}
   - component: {fileID: 279338794}
   m_Layer: 5
-  m_Name: Cookie
+  m_Name: KillerWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -894,7 +894,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9830371d5f2ffa64d9aeac4ea6e761f8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5d92c52576b8e074190383750e8148d0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4180,7 +4180,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &545475804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4933,7 +4933,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9830371d5f2ffa64d9aeac4ea6e761f8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5d92c52576b8e074190383750e8148d0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5534,7 +5534,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2, y: 3.2}
+    oldSize: {x: 2.07, y: 2.07}
     newSize: {x: 3.2, y: 3.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5597,19 +5597,19 @@ MonoBehaviour:
     initAmount: 100
   weakBullets:
   - weakID: 0
-    sceneName: Cookie
+    sceneName: Inf_KillerWheel
     display: {fileID: 773211610}
-    enterText: Burnt Cookie
+    enterText: Killer Wheel
     subText: Suspiciously Good
   - weakID: 1
-    sceneName: FireLaser
+    sceneName: Inf_HonkingHorn
     display: {fileID: 159945743}
-    enterText: Fire Laser
+    enterText: Honking Horn
     subText: Only good when warm
   - weakID: 2
-    sceneName: BurntPie
+    sceneName: Inf_DuoPedal
     display: {fileID: 1845460929}
-    enterText: Burnt Pie
+    enterText: Duo Pedal
     subText: Layers
   container: {fileID: 79100519}
   activeScene: 0
@@ -5653,7 +5653,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 908d28b57a40e27409af63585a3bafdb, type: 3}
+  m_Sprite: {fileID: 7938086108960398205, guid: 47ae6de15ead7d645be148fb90159051,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -10725,7 +10726,7 @@ GameObject:
   - component: {fileID: 1212923760}
   - component: {fileID: 1212923759}
   m_Layer: 5
-  m_Name: BurntPie
+  m_Name: DuoPedal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10770,7 +10771,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 58663bd1a36317a47854a99712837e8f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ca98be21e54fa3d418a4451ab72e2a5e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11778,7 +11779,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 58663bd1a36317a47854a99712837e8f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ca98be21e54fa3d418a4451ab72e2a5e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -687,7 +687,7 @@ MonoBehaviour:
   bulletData: {fileID: 11400000, guid: 0358f0ec5067e76469838d75767ce173, type: 2}
   secondData: {fileID: 11400000, guid: 4876f621766e08748b84e5011b50b7f5, type: 2}
   bossHP: {fileID: 11400000, guid: 0d6eadad1248964488dcb7a6eda8937e, type: 2}
-  maxHP: 600
+  maxHP: 550
   finalScene:
     weakID: 0
     sceneName: FInf_Lighthouse
@@ -7185,7 +7185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1890330167
 MonoBehaviour:
   m_ObjectHideFlags: 0

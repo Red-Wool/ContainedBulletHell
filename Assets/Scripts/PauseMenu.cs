@@ -69,6 +69,7 @@ public class PauseMenu : MonoBehaviour
     {
         isPaused = true;
         PauseState();
+        ButtonBlock.ResetButtonPress();
         SceneManager.LoadScene(isQuitting ? "Title" : SceneManager.GetActiveScene().name);
     }
 

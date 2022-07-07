@@ -12,6 +12,7 @@ public class InfiltrationEnemyScript : MonoBehaviour {
     public float shootRate;
     public float moveRate;
     public int hp;
+    public bool invincible;
     public bool look;
 
     private GameObject player;
@@ -47,18 +48,23 @@ public class InfiltrationEnemyScript : MonoBehaviour {
     }
 
     public bool Damage() {
-        hp--;
-        if (hp <= 0) {
-            // maybe we can add a cool effect here, or require the player to kill all the enemies before getting the star?
-            transform.DOKill();
-            if (shooting != null)
-                StopCoroutine(shooting);
+        if (!invincible)
+        {
+            hp--;
+            if (hp <= 0)
+            {
+                // maybe we can add a cool effect here, or require the player to kill all the enemies before getting the star?
+                transform.DOKill();
+                if (shooting != null)
+                    StopCoroutine(shooting);
 
-            SoundManager.instance.explosion.Play();
-            ParticleManager.instance.PlayParticle(ParticleManager.instance.explosion, transform.position);
-            gameObject.SetActive(false);
-            return true;
+                SoundManager.instance.explosion.Play();
+                ParticleManager.instance.PlayParticle(ParticleManager.instance.explosion, transform.position);
+                gameObject.SetActive(false);
+                return true;
+            }
         }
+        
         return false;
     }
 }

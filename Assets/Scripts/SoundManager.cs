@@ -35,14 +35,14 @@ public class SoundManager : MonoBehaviour
         {
             music.volume = option.musicPercent;
 
-            shoot.volume = option.sfxPercent * .2f;
+            shoot.volume = option.sfxPercent * .1f;
             laser.volume = option.sfxPercent * .8f;
             laserGet.volume = option.sfxPercent * .7f;
             graze.volume = option.sfxPercent * .8f;
             hurt.volume = option.sfxPercent * .8f;
             explosion.volume = option.sfxPercent * .8f;
-            infiltrateIn.volume = option.sfxPercent * .8f;
-            infiltrateOut.volume = option.sfxPercent * .8f;
+            infiltrateIn.volume = option.sfxPercent * .6f;
+            infiltrateOut.volume = option.sfxPercent * .6f;
         }
     }
 

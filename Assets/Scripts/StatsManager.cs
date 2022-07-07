@@ -86,6 +86,7 @@ public class StatsManager : MonoBehaviour {
 
     public void NextBossButton() {
         DOTween.KillAll();
+        ButtonBlock.ResetButtonPress();
         Cursor.visible = true;
         Time.timeScale = 1f;
 

@@ -108,6 +108,7 @@ public class PlayerMove : MonoBehaviour
         transform.localScale = Vector3.zero;
         yield return new WaitForSeconds(2f);
 
+        ButtonBlock.ResetButtonPress();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

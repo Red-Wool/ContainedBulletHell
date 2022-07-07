@@ -22,7 +22,7 @@ MonoBehaviour:
       randomDisplace: {x: 2, y: 2}
       wait: 0
     nextSessions: 010000000200000003000000
-    coolDown: 8
+    coolDown: 7
   - sequence:
     - pattern:
         pos:
@@ -32,7 +32,7 @@ MonoBehaviour:
       randomDisplace: {x: 2, y: 2}
       wait: 0
     nextSessions: 000000000200000003000000
-    coolDown: 8
+    coolDown: 7
   - sequence:
     - pattern:
         pos:
@@ -42,7 +42,7 @@ MonoBehaviour:
       randomDisplace: {x: 2, y: 2}
       wait: 0
     nextSessions: 010000000000000003000000
-    coolDown: 8
+    coolDown: 7
   - sequence:
     - pattern:
         pos:
@@ -52,4 +52,4 @@ MonoBehaviour:
       randomDisplace: {x: 2, y: 2}
       wait: 0
     nextSessions: 010000000200000000000000
-    coolDown: 8
+    coolDown: 7

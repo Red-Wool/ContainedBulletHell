@@ -48,24 +48,36 @@ EditorBuildSettings:
     path: Assets/Scenes/2-Lighthouse/FInf_Lighthouse.unity
     guid: cd3aceeb7789a2d478d2340852f884dc
   - enabled: 1
-    path: Assets/Scenes/3-Oven/Boss_Oven.unity
+    path: Assets/Scenes/4-Oven/Boss_Oven.unity
     guid: f85d897f82e984b4ba5b4bd53057dfcd
   - enabled: 1
-    path: Assets/Scenes/3-Oven/Inf_Cookie.unity
+    path: Assets/Scenes/4-Oven/Inf_Cookie.unity
     guid: 0a9725bb2e003024181adc0d75b2c2a6
   - enabled: 1
-    path: Assets/Scenes/3-Oven/Inf_FireLaser.unity
+    path: Assets/Scenes/4-Oven/Inf_FireLaser.unity
     guid: 35e036f1fe55bb24293ee568cc8d0888
   - enabled: 1
-    path: Assets/Scenes/3-Oven/Inf_BurntPie.unity
+    path: Assets/Scenes/4-Oven/Inf_BurntPie.unity
     guid: 51d175d4b127e624ca18bc6da79dcf7e
   - enabled: 1
-    path: Assets/Scenes/3-Oven/FInf_Oven.unity
+    path: Assets/Scenes/4-Oven/FInf_Oven.unity
     guid: 2142ecc31f583694c9918c1e819bf499
   - enabled: 1
-    path: Assets/Scenes/4-Tricycle/Boss_Tricycle.unity
+    path: Assets/Scenes/3-Tricycle/Boss_Tricycle.unity
     guid: 289e1ba2bc9e25f42bdf86b4d690a558
   - enabled: 1
     path: Assets/Scenes/Test_BlueSky.unity
     guid: 2c9bf4c033896d14489805b580aff40a
+  - enabled: 1
+    path: Assets/Scenes/3-Tricycle/Inf_KillerWheel.unity
+    guid: cbc85aec442c57e4aa20afcfb49cf3a1
+  - enabled: 1
+    path: Assets/Scenes/3-Tricycle/FInf_KillerTricycle.unity
+    guid: cced8acec80e02a4ea41aa469c850264
+  - enabled: 1
+    path: Assets/Scenes/3-Tricycle/Inf_HonkingHorn.unity
+    guid: 8bec90d9d8a69054195c35d14a23205d
+  - enabled: 1
+    path: Assets/Scenes/3-Tricycle/Inf_DuoPedal.unity
+    guid: efe1f83a72a987b45923e5165e5a826b
   m_configObjects: {}

@@ -16,23 +16,31 @@ public class FlipBlock : MonoBehaviour
         hitbox = GetComponent<BoxCollider2D>();
         sr = GetComponent<SpriteRenderer>();
 
-
+        Flip(0);
         ButtonBlock.ButtonPress += Flip;
+    }
+
+    private void Start()
+    {
+        hitbox = GetComponent<BoxCollider2D>();
     }
 
     public void Flip(int num)
     {
-        if (num == onNum)
+        if (hitbox)
         {
-            hitbox.enabled = true;
-            transform.DOScale(Vector3.one, .25f).SetEase(Ease.InOutSine);
-            sr.DOFade(1f, .25f);
-        }
-        else
-        {
-            hitbox.enabled = false;
-            transform.DOScale(Vector3.one*.1f, .25f).SetEase(Ease.InOutSine);
-            sr.DOFade(.5f, .25f);
+            if (num == onNum)
+            {
+                hitbox.enabled = true;
+                transform.DOScale(Vector3.one * 4f, .25f).SetEase(Ease.InOutSine);
+                sr.DOFade(1f, .25f);
+            }
+            else
+            {
+                hitbox.enabled = false;
+                transform.DOScale(Vector3.one, .25f).SetEase(Ease.InOutSine);
+                sr.DOFade(.5f, .25f);
+            }
         }
     }
 

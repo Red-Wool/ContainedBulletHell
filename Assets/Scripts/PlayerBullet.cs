@@ -83,13 +83,17 @@ public class PlayerBullet : MonoBehaviour {
             }
             gameObject.SetActive(false);
         } else if (collision.gameObject.CompareTag("InfEnemy")) {
-            StatsManager.instance.shotsHit++;
-            if (collision.gameObject.GetComponent<InfiltrationEnemyScript>().Damage())
+            InfiltrationEnemyScript enemy = collision.gameObject.GetComponent<InfiltrationEnemyScript>();
+            if (enemy && !enemy.invincible)
             {
-                intel.value += 50f;
-                CheckGotLaser(50f);
+                StatsManager.instance.shotsHit++;
+                if (enemy.Damage())
+                {
+                    intel.value += 50f;
+                    CheckGotLaser(50f);
+                }
+                ParticleManager.instance.PlayParticle(ParticleManager.instance.damageHit, Vector3.Lerp(transform.position, collision.gameObject.transform.position, .2f));
             }
-            ParticleManager.instance.PlayParticle(ParticleManager.instance.damageHit, Vector3.Lerp(transform.position, collision.gameObject.transform.position, .2f));
             gameObject.SetActive(false);
         } else if (collision.gameObject.CompareTag("Border")) {
             gameObject.SetActive(false);
