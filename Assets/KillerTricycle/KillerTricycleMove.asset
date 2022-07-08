@@ -17,7 +17,7 @@ MonoBehaviour:
     - pattern:
         pos:
         - {x: -25, y: 15}
-        time: 1.5
+        time: 2
         easeStyle: 1
       randomDisplace: {x: 2, y: 2}
       wait: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
     - pattern:
         pos:
         - {x: 25, y: 15}
-        time: 1.5
+        time: 2
         easeStyle: 1
       randomDisplace: {x: 2, y: 2}
       wait: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
     - pattern:
         pos:
         - {x: -25, y: -15}
-        time: 1.5
+        time: 2
         easeStyle: 1
       randomDisplace: {x: 2, y: 2}
       wait: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
     - pattern:
         pos:
         - {x: 25, y: -15}
-        time: 1.5
+        time: 2
         easeStyle: 1
       randomDisplace: {x: 2, y: 2}
       wait: 0

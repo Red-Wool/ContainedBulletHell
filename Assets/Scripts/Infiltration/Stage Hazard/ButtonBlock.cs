@@ -11,6 +11,8 @@ public class ButtonBlock : MonoBehaviour
 
     public StoredValue buttonNum;
 
+    public bool oneTime;
+
     public Sprite redButton;
     public Sprite blueButton;
 
@@ -58,9 +60,13 @@ public class ButtonBlock : MonoBehaviour
 
     public void UpdateSprite(int num)
     {
-        sr.sprite = (num == 0) ? redButton : blueButton;
-        disablePress = Disable();
-        StartCoroutine(disablePress);
+        if (gameObject.activeSelf)
+        {
+            sr.sprite = (num == 0) ? redButton : blueButton;
+            disablePress = Disable();
+            StartCoroutine(disablePress);
+        }
+        
     }
 
     public void Switch()
@@ -72,6 +78,14 @@ public class ButtonBlock : MonoBehaviour
 
         buttonNum.value = (buttonNum.value == 0) ? 1 : 0;
         ButtonPress.Invoke((int)buttonNum.value);
+
+        if (oneTime)
+        {
+            ParticleManager.instance.PlayParticle(ParticleManager.instance.explosion, transform.position);
+            SoundManager.instance.explosion.Play();
+            BulletInfiltrate.Exit -= DisableSelf;
+            gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

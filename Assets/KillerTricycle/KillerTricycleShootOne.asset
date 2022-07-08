@@ -44,7 +44,7 @@ MonoBehaviour:
       loopAngle: 0
       loopSpeed: 1
     nextSessions: 02000000
-    coolDown: 0.8
+    coolDown: 0.9
     spawnPos:
     - {x: 0, y: 0}
   - sequence:
@@ -61,7 +61,7 @@ MonoBehaviour:
       loopAngle: 0
       loopSpeed: 1
     nextSessions: 0300000004000000
-    coolDown: 0.3
+    coolDown: 0.5
     spawnPos:
     - {x: 0, y: 0}
   - sequence:
@@ -105,7 +105,7 @@ MonoBehaviour:
       loopAngle: 30
       loopSpeed: 0
     nextSessions: 00000000010000000400000005000000
-    coolDown: 1
+    coolDown: 1.2
     spawnPos:
     - {x: 0, y: 0}
   - sequence:
@@ -125,6 +125,6 @@ MonoBehaviour:
       loopAngle: -20
       loopSpeed: 0
     nextSessions: 0000000001000000
-    coolDown: 1.6
+    coolDown: 1.5
     spawnPos:
     - {x: 0, y: 0}

@@ -761,7 +761,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245430893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 1049147594}
@@ -4180,7 +4180,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &545475804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5541,7 +5541,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.2, y: 10}
+  m_Size: {x: 10, y: 3.2}
   m_EdgeRadius: 0
 --- !u!114 &1049147596
 MonoBehaviour:
@@ -5575,10 +5575,12 @@ MonoBehaviour:
   maxHP: 1500
   finalScene:
     weakID: 0
-    sceneName: FInf_Oven
+    sceneName: FInf_KillerTricycle
     display: {fileID: 0}
     enterText: Cursed Oven
-    subText: Finish them!
+    subText: 'Guaranteed to blow
+
+      your mind'
   bulletPools:
   - poolObject: {fileID: 3813756521598694522, guid: d13195098cc730f41b4fbc583d70c166,
       type: 3}
@@ -5600,7 +5602,7 @@ MonoBehaviour:
     sceneName: Inf_KillerWheel
     display: {fileID: 773211610}
     enterText: Killer Wheel
-    subText: Suspiciously Good
+    subText: 
   - weakID: 1
     sceneName: Inf_HonkingHorn
     display: {fileID: 159945743}

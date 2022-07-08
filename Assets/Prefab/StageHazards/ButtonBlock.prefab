@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4660856854469015215}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -114.45, y: 105.55, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonNum: {fileID: 11400000, guid: 280f4583e04d1094aa8f23e832d3153e, type: 2}
+  oneTime: 0
   redButton: {fileID: -8667138278668412045, guid: a42394a50c4279a41b6a0b9a428b4c89,
     type: 3}
   blueButton: {fileID: -3283700768775812618, guid: a42394a50c4279a41b6a0b9a428b4c89,

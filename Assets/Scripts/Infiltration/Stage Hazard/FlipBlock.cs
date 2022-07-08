@@ -11,6 +11,8 @@ public class FlipBlock : MonoBehaviour
     private BoxCollider2D hitbox;
     private SpriteRenderer sr;
 
+    private bool insta;
+
     private void Awake()
     {
         hitbox = GetComponent<BoxCollider2D>();
@@ -32,6 +34,7 @@ public class FlipBlock : MonoBehaviour
             if (num == onNum)
             {
                 hitbox.enabled = true;
+                StartCoroutine(Instakill());
                 transform.DOScale(Vector3.one * 4f, .25f).SetEase(Ease.InOutSine);
                 sr.DOFade(1f, .25f);
             }
@@ -44,11 +47,18 @@ public class FlipBlock : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public IEnumerator Instakill()
     {
-        if (collision.gameObject.tag == "Player")
+        insta = true;
+        yield return new WaitForSeconds(.25f);
+        insta = false;
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player" && insta)
         {
-            collision.gameObject.GetComponent<PlayerMove>().Damage(1);
+            collision.gameObject.GetComponent<PlayerMove>().Damage(8);
         }
     }
 }
