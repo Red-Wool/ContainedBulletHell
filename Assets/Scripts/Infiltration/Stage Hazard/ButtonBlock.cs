@@ -29,7 +29,7 @@ public class ButtonBlock : MonoBehaviour
     private void DisableSelf()
     {
         canPress = false;
-        if (disablePress != null)
+        if (gameObject != null && disablePress != null)
         {
             StopCoroutine(disablePress);
         }

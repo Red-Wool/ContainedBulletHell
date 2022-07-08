@@ -5602,12 +5602,12 @@ MonoBehaviour:
     sceneName: Inf_KillerWheel
     display: {fileID: 773211610}
     enterText: Killer Wheel
-    subText: 
+    subText: wheel of unfortunate
   - weakID: 1
     sceneName: Inf_HonkingHorn
     display: {fileID: 159945743}
     enterText: Honking Horn
-    subText: Only good when warm
+    subText: 
   - weakID: 2
     sceneName: Inf_DuoPedal
     display: {fileID: 1845460929}
